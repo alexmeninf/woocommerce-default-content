@@ -1,6 +1,4 @@
-<div class="shopping-cart cart-fragments" 
-  data-totals-cart="<?= THEME_DISABLE_PRODUCT_PRICE === false ? WC()->cart->total : '00.00' ?>"
-  data-currency-symbol="<?php echo get_woocommerce_currency_symbol(); ?>">
+<div class="shopping-cart cart-fragments" data-totals-cart="<?= THEME_DISABLE_PRODUCT_PRICE === false ? WC()->cart->total : '00.00' ?>" data-currency-symbol="<?php echo get_woocommerce_currency_symbol(); ?>">
   <div class="theme-products theme-product-small">
 
     <?php if (WC()->cart->is_empty()) : ?>
@@ -45,27 +43,29 @@
               <a href="<?php echo $product_permalink; ?>" class="theme-product-image">
                 <?php echo $thumbnail; ?>
               </a>
-              
+
               <!-- product-info -->
               <div class="theme-product-description">
                 <a href="<?php echo $product_permalink; ?>" class="theme-product-title theme-link">
-                  <?php echo $product_name; ?> 
+                  <?php echo $product_name; ?>
                 </a>
 
                 <div class="mt-2 attributes">
                   <?php echo $attributes ? $attributes : ''; ?>
                 </div>
 
-                <span class="theme-product-price" data-total-price="<?= THEME_DISABLE_PRODUCT_PRICE === false ? $product_subtotal : '00.00' ?>">
-                  <span class="qnt"><?php echo $cart_item['quantity']; ?></span>                 
-                  <?php 
-                  if ( THEME_DISABLE_PRODUCT_PRICE === false ) :
-                    echo ' x <span class="amount">' . $product_price . '</span>';
-                  else:
+                <span class="item-product-price" data-total-price="<?= THEME_DISABLE_PRODUCT_PRICE === false ? $product_subtotal : '00.00' ?>">
+                  <?php
+                  if (THEME_DISABLE_PRODUCT_PRICE === false) :
+                    echo '<div class="item-subtotal"><b>Subtotal:</b> <span class="qnt">' . $cart_item['quantity'] . '</span> x <span class="amount">' . $product_price . '</span>';
+                    echo '<div class="item-total"><b>Total:</b> ' . get_woocommerce_currency_symbol() . ' ' . $product_subtotal . '</div>';
+                  else :
+                    echo '<span class="qnt">' . $cart_item['quantity'] . '</span> x ';
                     echo $cart_item['quantity'] == 1 ? ' item' : ' itens';
-                  endif; 
+                  endif;
                   ?>
                 </span>
+
               </div>
             </div>
           </div><!-- End of Product item -->
@@ -76,16 +76,16 @@
   </div><!-- /.theme-products -->
 
   <div class="sc-footer">
-    <?php 
-    if ( THEME_DISABLE_PRODUCT_PRICE === false ) :
+    <?php
+    if (THEME_DISABLE_PRODUCT_PRICE === false) :
       echo '<div class="subtotal">Subtotal: <span class="cart_contents_subtotal">' . wc_price(WC()->cart->total, array(false, '', ',', '.')) . '</span></div>';
-    endif; 
+    endif;
     ?>
 
     <?php if (WC()->cart->get_cart_contents_count() > 0) : ?>
       <a href="<?= wc_get_checkout_url() ?>" class="button alt w-100"><span><?= __('Finalizar pedido', 'wcstartertheme'); ?></span> <i class="fal fa-long-arrow-right ms-3"></i></a>
       <a href="<?= wc_get_cart_url(); ?>" class="button w-100 mt-2"><span><?= __('Carrinho', 'wcstartertheme'); ?></span> <i class="fal fa-long-arrow-right ms-3"></i></a>
-    <?php else: ?>
+    <?php else : ?>
       <a href="<?= get_permalink(wc_get_page_id('shop')) ?>" class="button w-100"><span><?= __('Fazer compras', 'wcstartertheme'); ?></span> <i class="fal fa-long-arrow-right ms-3"></i></a>
     <?php endif; ?>
   </div><!-- /.sc-cart -->

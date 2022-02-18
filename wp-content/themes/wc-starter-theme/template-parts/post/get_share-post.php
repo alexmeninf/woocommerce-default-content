@@ -44,3 +44,31 @@ if (!defined('ABSPATH'))
     </ul>
   </div>
 </div>
+
+
+<script>
+  shareAPI = () => {
+    const shareButton = document.querySelector('.share-button');
+
+    if (shareButton === null) return;
+
+    if (navigator.share) {
+      shareButton.addEventListener('click', event => {
+        const title = document.title;
+        const url = document.querySelector('link[rel=canonical]') ? document.querySelector('link[rel=canonical]').href : document.location.href;
+
+        navigator.share({
+          title: title,
+          url: url
+        }).then(() => {
+          // console.log('Thanks for sharing!');
+        })
+          .catch(console.error);
+      });
+    } else {
+      shareButton.classList.add('d-none');
+    }
+  }
+
+  shareAPI();
+</script>

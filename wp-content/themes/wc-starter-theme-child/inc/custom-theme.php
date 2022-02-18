@@ -26,10 +26,10 @@ function callback_theme_footer() { ?>
           <?php do_action('footer_before_developer'); ?>
 
           <p class="developer js-dev-footer"><?php _e('Desenvolvido por', 'starterthemechild') ?> <a href="https://inovany.com.br" target="_blank" rel="noopener" title="iNova">
-              <img src="https://assets.comet.com.br/assets/default/logo-inova-dark.png" alt="Inova">
+              <img src="https://assets.comet.com.br/assets/default/logo-inova-dark.png" alt="Inova" height="24">
             </a>
             <a href="https://bluelizard.com.br" target="_blank" rel="noopener" title="Blue Lizard">
-              <img src="https://assets.comet.com.br/assets/default/logo-bluelizard-default.png" alt="Blue Lizard">
+              <img src="https://assets.comet.com.br/assets/default/logo-bluelizard-default.png" alt="Blue Lizard" height="24">
             </a>
           </p>
         </div>

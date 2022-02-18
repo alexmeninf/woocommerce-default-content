@@ -29,16 +29,16 @@ $default-spacing-x: 0 !default;
 }
 
 // components/_button.scss
-@mixin button($bg, $color, $bgHover, $colorHover) {
-  background-color: $bg;
+@mixin button($bg, $color, $border, $bgHover, $colorHover, $borderHover) {
+  background: $bg;
   color: $color;
-  border-color: $bgHover;
+  border-color: $border;
 
   &:hover,
   &:active,
   &:focus {
-    background-color: $bgHover;
-    border-color: $bgHover;
+    border-color: $borderHover;
+    background: $bgHover;
     color: $colorHover;
   }
 }

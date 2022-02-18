@@ -36,26 +36,33 @@
 	}
 }
 
-.share-default {
-	@include button($color-default, $white, darken($color-default, 10%), $white);
-}
 
 .share-facebook {
-	@include button(#036be4, $white, darken(#036be4, 10%), $white);
+	@include button(#036be4, $white, #036be4, darken(#036be4, 10%), $white, darken(#036be4, 10%));
 }
 
 .share-twitter {
-	@include button(#55acee, $white, darken(#55acee, 10%), $white);
+	@include button(#55acee, $white, #55acee, darken(#55acee, 10%), $white, darken(#55acee, 10%));
 }
 
 .share-linkedin {
-	@include button(#007bb5, $white, darken(#007bb5, 10%), $white);
+	@include button(#007bb5, $white, #007bb5, darken(#007bb5, 10%), $white, darken(#007bb5, 10%));
 }
 
 .share-whatsapp {
-	@include button(#25D366, $white, darken(#25D366, 10%), $white);
+	@include button(#25D366, $white, #25D366, darken(#25D366, 10%), $white, darken(#25D366, 10%));
 }
 
 .share-telegram {
-	@include button(#0088cc, $white, darken(#0088cc, 10%), $white);
+	@include button(#0088cc, $white, #0088cc, darken(#0088cc, 10%), $white, darken(#0088cc, 10%));
+}
+
+.share-default {
+	@include button(
+		rgba(243,244,246), 
+		rgba(107,114,128), 
+		rgba(243,244,246), 
+		rgba(229,231,235), 
+		rgba(107,114,128), 
+		rgba(229,231,235));
 }

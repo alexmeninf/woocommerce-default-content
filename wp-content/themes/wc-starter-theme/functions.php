@@ -35,13 +35,16 @@ define('ENABLE_FORM_BUILDER', false);
  */
 
 // Habilitar opção para método de pagamento
-define('CART_NEEDS_PAYMENT', false);
+define('CART_NEEDS_PAYMENT', true);
 
 // Desativa a exibição de preços na loja
 define('THEME_DISABLE_PRODUCT_PRICE', false);
 
 // Habilitar link customizado para a página de cadastro
 define('THEME_CUSTOM_REGISTER_PAGE', false);
+
+// Adicionar produto para o carrinho via ajax na single page.
+define('ADD_TO_CART_AJAX_SINGLE_PAGE', true);
 
 
 /**
@@ -58,12 +61,14 @@ require 'inc/theme.php';
 /**
  * WooCommerce Functions
  */
+require 'inc/wc/add_to_cart_single_ajax.php';
 require 'inc/wc/add-class-to-input.php';
 require 'inc/wc/wc_product_purchase_price_field.php';
 require 'inc/wc/remove-links-content-product.php';
 require 'inc/wc/enqueue-plugin-scripts.php';
 require 'inc/wc/my-account-navigation-links.php';
 require 'inc/wc/empty-cart.php';
+require 'inc/wc/single_product-add-button-to-checkout.php';
 require 'inc/wc/update-cart-fragments.php';
 require 'inc/wc/wc-required-fields.php';
 require 'inc/wc/custom-illustration-pages.php';

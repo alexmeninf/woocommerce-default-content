@@ -33,6 +33,7 @@ use_css('main-default');
  * Scripts Files 
  */
 new_js('utilities', 'assets/plugins/util.js');
+new_js('popper', 'assets/plugins/bootstrap/js/popper.min.js');
 new_js('bootstrap-default', 'assets/plugins/bootstrap/js/bootstrap.min.js');
 new_js('jquery.mask-default', 'assets/plugins/jquery-mask/js/jquery.mask.min.js');
 new_js('lazyload-default', 'assets/plugins/lazyload.min.js');
@@ -46,6 +47,7 @@ new_js('main-default', 'assets/js/main.js', true, true);
  * Use JS Default
  */
 use_js('utilities');
+use_js('popper');
 use_js('bootstrap-default');
 use_js('jquery.mask-default');
 use_js('lazyload-default');

@@ -29,8 +29,8 @@ jQuery(function ($) {
   				$(totalItems).html(countItems - qnt);
 
           // Subtrai valor total
-          let currentTotal = $(cartShopping).data('totals-cart'),
-            priceRemoved   = item.find('.theme-product-price').data('total-price'),
+          let currentTotal = $(cartShopping).attr('data-totals-cart'),
+            priceRemoved   = item.find('.theme-product-price').attr('data-total-price'),
             newTotalPrice  = currentTotal - priceRemoved;
           $(cartShopping).attr('data-totals-cart', newTotalPrice);
 
