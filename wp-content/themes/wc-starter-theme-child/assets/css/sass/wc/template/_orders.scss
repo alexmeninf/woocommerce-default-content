@@ -1,0 +1,49 @@
+.woocommerce-orders-table__cell-order-number {
+  font-weight: bold;
+  @include media(md, max) {
+    @include pseudoTitle('Nº pedido');
+  }
+}
+
+.woocommerce-orders-table__cell-order-date {
+  &:before {
+    color: $black;
+    content: '\f274';
+    font-family: "Font Awesome 5 Pro";
+    margin-right: 5px;
+    font-size: 110%;
+  }
+}
+
+.woocommerce-orders-table__cell-order-total {
+  vertical-align: bottom !important;
+
+ @include media(md, max) {
+  @include pseudoTitle('Total');
+ }
+}
+
+// Concluido
+$order_status: (
+  'pending': #353535,
+  'processing': #3291dc,
+  'on-hold': #353535,
+  'completed': #4cb14c,
+  'cancelled': #353535,
+  'refunded': #353535,
+  'failed': #ef2d2d
+);
+
+@each $status, $color in $order_status {
+  .woocommerce-orders-table__row--status-#{$status} {
+    .woocommerce-orders-table__cell-order-status {
+      color: $color;
+    }
+  }
+}
+
+table.order_details {
+  td {
+    padding: 1.3em 0;
+  }
+}

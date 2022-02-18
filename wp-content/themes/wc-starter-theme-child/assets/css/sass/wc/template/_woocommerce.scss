@@ -1,0 +1,55 @@
+/*===================================
+=            WOOCOMMERCE            =
+===================================*/
+.woocommerce {
+
+	/*----------  Single product  ----------*/
+	@import 'single-product';
+	/*----------  List products  ----------*/
+	@import 'list-products';
+	/*----------  Buttons  ----------*/
+	@import 'buttons';
+	/*----------  Cart  ----------*/
+	@import 'cart';
+}
+
+/*----------  My account page  ----------*/
+@import 'my-account';
+/* Orders */
+@import 'orders';
+/*----------  Card of product  ----------*/
+@import 'card';
+/*----------  Search page  ----------*/
+@import 'search-page';
+
+@import 'checkout';
+
+
+/*----------  Page of categorie product  ----------*/
+.payment-link {
+	color: #fff !important;
+}
+
+// thank you page
+.woocommerce-thankyou-order-received {
+  color: var(--color-step-finished);
+  font-size: 24px !important;
+  padding-bottom: 50px;
+  font-weight: 200;
+	line-height: initial;
+  text-align: center;
+}
+
+.loading-removing {
+	position: relative; 
+
+	&:after {
+		@include pseudo(2);
+    background-color: var(--color-fill);
+		background-image: url('../img/loading.svg');
+		background-repeat: no-repeat;
+    background-size: 28px;
+    background-position: center;
+		opacity: 0.87;
+	}
+}

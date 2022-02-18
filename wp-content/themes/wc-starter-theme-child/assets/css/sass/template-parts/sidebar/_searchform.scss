@@ -1,0 +1,21 @@
+.search-form {
+  position: relative;
+
+  label {
+    margin-bottom: 0 !important;
+  }
+
+  .search-submit {
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    display: inline-block;
+    font-size: 16px;
+    height: calc(100% - 2px);
+    outline: none;
+    padding: 9px 20px;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+  }
+}

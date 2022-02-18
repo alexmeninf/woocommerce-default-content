@@ -1,0 +1,19 @@
+@charset "utf-8";
+/*
+  Theme Name: Woocommerce Starter Theme
+  Theme URI: https://github.com/alexmeninf/woocommerce-default-content
+  Author: Alexandre Menin
+  Author URI: https://github.com/alexmeninf
+  Description: Theme developed and supported by Woocommerce, Elementor integration for a clean and simple application when developing your store.
+  Requires at least: 5.9
+  Tested up to: 5.9
+  Requires PHP: 5.6
+  Version: 3.6
+  License: GNU General Public License v2 or later
+  License URI: http://www.gnu.org/licenses/gpl-2.0.html
+  Text Domain: wcstartertheme
+*/
+/* =WordPress Core
+-------------------------------------------------------------- */
+input:-webkit-autofill,input:-webkit-autofill:active,input:-webkit-autofill:focus,input:-webkit-autofill:hover {background-color: #fff;-webkit-box-shadow: 0 0 0 1000px #fff inset !important;}.wp-block-image img {border-radius: 14px;height: auto;width: 100%;}
+/* ------------ End Wordpress Style ------------ */

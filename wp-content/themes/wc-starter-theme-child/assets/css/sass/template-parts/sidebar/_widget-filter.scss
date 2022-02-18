@@ -1,0 +1,190 @@
+form.awf-filters-form > div {
+  border-bottom: 1px solid var(--color-border-color);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.widget-area {
+  @include media(md, max) {
+    display: none;
+  }
+
+  .woocommerce-mini-cart__total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .woocommerce-mini-cart__buttons {
+    display: flex;
+
+    a {
+      text-align: center;
+      border: 1px solid var(--color-border-color) !important;
+      border-radius: 7px;
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+.awf-togglable-preset-btn {
+  margin: 20px 0 !important;
+  color: var(--color-text-secondary-color);
+  border: 1px solid var(--color-fill-tertiary);
+
+  &:hover {
+    background-color: var(--color-fill-secondary);    
+    border-color: var(--color-button-background);
+  }
+}
+ 
+// Button reset settings
+.awf-reset-btn {
+  background: var(--color-button-background);
+  border: 1px solid var(--color-button-background);
+  color: var(--color-button-text);
+  width: 100% !important;
+  display: block;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.awf-reset-btn-container {
+  margin-bottom: 40px !important;
+}
+
+.awf-preset-wrapper {
+  color: var(--color-text);
+}
+
+// Change icons Font Awesome version
+.awf-collapsible-children .awf-parent-container::after,
+.awf-togglable-preset-close-btn i,
+.awf-togglable-preset-btn i,
+.awf-collapse-btn::before,
+.awf-filter-container.awf-product-search-container::before,
+.awf-style-icons label::before,
+.awf-style-custom-terms label::before,
+.awf-style-range-stars .awf-filter-container label::before,
+.awf-style-range-stars .awf-filter-container label::after,
+.awf-preset-wrapper.awf-sbs .awf-filter-wrapper.awf-sbs-loading::before,
+.blockUI::before,
+.awf-daterangepicker-container::before,
+.awf-daterangepicker-container::after {
+  font-family: "Font Awesome 5 Pro" !important;
+  color: var(--color-text);
+}
+
+// Line in price filter
+.noUi-connect {
+  background: var(--color-text) !important;
+}
+
+.noUi-target {
+  background: transparent !important;
+  border-color: var(--color-text) !important;
+}
+
+// Icons to rating
+.awf-style-icons [class*="awf-rating-"] label::before {
+  color: #fdb837 !important;
+}
+
+.awf-preset-title {
+  color: var(--color-text);
+}
+
+// Show active filters
+.awf-active-badge {
+  margin: 1px 0 0 0 !important;
+  padding: 3px 5px !important;
+  background: var(--color-fill);
+  color: var(--color-text);
+}
+
+.awf-filter-container {
+  // Search bar
+  &.awf-product-search-container {
+    .awf-filter {
+      border: 1px solid var(--color-border-color);
+    }
+
+    .awf-product-search-autocomplete-container {
+      background:  var(--color-fill) !important;
+      border-color:  var(--color-fill) !important;
+
+      ul.products {
+        li.product {
+          a.woocommerce-LoopProduct-link {
+            > * {
+              line-height: 1.1 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Search results filter
+  .products img {
+    border-radius: 22%;
+  }
+}
+
+#sidebar-left-page-s-filter-autocomplete-container {
+  .woocommerce {
+    display: block;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0 !important;
+  }
+}
+
+.awf-filters-container {
+  .price ins .amount,
+  .price bdi {
+    font-size: 16px !important;
+    color: var(--color-theme);
+  }
+}
+
+// show all results
+.awf-s-autocomplete-view-all-container {
+  border-top: 0 !important;
+  padding: 0 !important;
+
+  a {
+    background: var(--color-button-background);
+    display: block;
+    padding: 11px 18px;
+    font-weight: 500;
+    color: var(--color-button-text);
+  }
+}
+
+
+// Plugin
+.awf-filter-title,
+.widget h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+
+  &:before {
+    content: "";
+    background-color: var(--color-theme);
+    display: inline-block;
+    height: 2px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 20px;
+    @extend %transition;
+  }
+}

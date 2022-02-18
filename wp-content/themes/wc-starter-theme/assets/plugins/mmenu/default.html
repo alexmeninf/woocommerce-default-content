@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="www.frebsite.nl" />
+  <meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+
+  <title>mmenu.js demo</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- mMenu -->
+  <link type="text/css" rel="stylesheet" href="mmenu.css" />
+  <link type="text/css" rel="stylesheet" href="mburger.css" />
+  <link type="text/css" rel="stylesheet" href="mhead.css" />
+  <link type="text/css" rel="stylesheet" href="demo.css" />
+</head>
+
+<body>
+
+
+  <div id="page">
+    <!-- HEADER -->
+    <header class="mh-head" id="header-main">
+      <span class="mh-btns-left">
+        <a href="#menu" class="mburger mburger--spin">
+          <b></b>
+          <b></b>
+          <b></b>
+        </a>
+      </span>
+
+      <div class="mh-logo" style="background-image:url(https://via.placeholder.com/40x150)"></div>
+
+      <span class="mh-btns-right">
+        <a class="fa fa-shopping-bag" href="#shoppingbag"></a>
+      </span>
+    </header>
+
+    <!-- Search field -->
+    <div class="mh-head">
+      <form class="mh-form">
+        <input placeholder="Buscar" />
+        <a href="#/" class="fa fa-search"></a>
+      </form>
+    </div>
+
+    <!-- menu -->
+    <nav id="menu">
+      <ul>
+        <li><a href=""><i class="fa fa-home"></i> Início</a></li>
+        <li>
+          <span>About usa</span>
+          <ul>
+            <li><a href="#">History</a></li>
+            <li>
+              <span>The team</span>
+              <ul>
+                <li>
+                  <a href="#about/team/management">Management</a>
+                </li>
+                <li>
+                  <a href="#about/team/sales">Sales</a>
+                </li>
+                <li>
+                  <a href="#about/team/development">Development</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#about/address">Our address</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#">A toggle</a>
+          <input type="checkbox" class="Toggle" />
+        </li>
+        <li>
+          <a href="#about">Another toggle</a>
+          <input type="checkbox" class="Toggle" />
+        </li>
+        <li class="Divider">Other demos</li>
+        <li><a href="advanced.html">Advanced demo</a></li>
+        <li><a href="onepage.html">One page demo</a></li>
+      </ul>
+    </nav>
+
+    <!-- Menu cart -->
+    <nav id="shoppingbag">
+      <div>
+        <div class="p-4">
+          <p>You have no items in your shopping bag.</p>
+        </div>
+      </div>
+    </nav>
+
+    <section class="content">
+      <p>
+        <strong>This is a demo.</strong><br />
+        Click the menu icon to open the menu.
+      </p>
+    </section>
+  </div>
+
+  <!-- mmenu scripts -->
+  <script src="mmenu.js"></script>
+  <script src="mhead.js"></script>
+  <script src="mmenu.polyfills.js"></script>
+
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded", () => {
+
+        // sidebar Menu
+        new Mmenu(document.querySelector('#menu'), {
+          counters: true,
+          offCanvas: true,
+          searchfield: {
+            placeholder: 'Busque por categorias',
+            panel: true,
+            showSubPanels: false,
+            cancel: true,
+            noResults: 'Nenhum resultado encontrado.'
+          },
+          navbars: [
+            {
+              "position": "top",
+              "content": [
+                "searchfield"
+              ]
+            },
+            {
+              "position": "bottom",
+              "content": [
+                "<a class='fa fa-envelope' href='#/'></a>",
+                "<a class='fa fa-twitter' href='#/'></a>",
+                "<a class='fa fa-facebook' href='#/'></a>"
+              ]
+            }
+          ],
+          extensions: [
+            "fx-menu-slide", // Slide effect
+            "pagedim-black", // Dim out the page to black
+            "shadow-panels", // Shadow left swipe
+            "theme-white"
+          ],
+          drag: {
+            "open": true,
+          },
+          setSelected: {
+            hover: true,
+          }
+        }, {
+          searchfield: {
+            clear: true,
+          },
+          language: 'pt_br'
+        });
+
+        // fixed header
+        new Mhead("#header-main", {
+          hide: 200,
+          unpin: 300
+        });
+
+        // Cart menu
+        new Mmenu(document.querySelector('#shoppingbag'), {
+          extensions: ["position-right", "fx-menu-slide", "pagedim-black",],
+          navbar: {
+            title: "Meu carrinho"
+          }
+        });
+      }
+    );
+  </script>
+</body>
+
+</html>

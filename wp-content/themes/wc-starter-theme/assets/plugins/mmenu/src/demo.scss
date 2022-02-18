@@ -1,0 +1,235 @@
+@import "../../../../assets/plugins/bootstrap/sass/functions";
+@import "../../../../assets/plugins/bootstrap/sass/mixins";
+@import "../../../../assets/plugins/bootstrap/sass/variables";
+@import "../../../../../wc-starter-theme-child/assets/css/sass/variables";
+
+:root {
+	--zindex-head-top: 1001;
+	--zindex-head-nav: 1000;
+	--menu-bg-color: #f7f7f7d9;
+	--menu-border-bottom-color: #dcdcdc;
+	--menu-color-links: #3c3c3c;
+	--menu-color-links-hover: #626262;
+	--menu-color-sublinks-hover: #{$color-default};
+	--menu-search-input: #d6d6d6bf;
+	--menu-search-button: #545454;
+}
+
+.mh-text {
+	font-size: 16px;
+}
+
+.content {
+	position: relative;
+}
+
+/* icons mobile */
+.mm-listitem i {
+	font-size: 16px;
+	margin: 0 20px 0 5px;
+	text-align: center;
+	width: 12px;
+}
+
+.header-bottom {
+	z-index: var(--zindex-head-nav);
+
+	@include media(lg, max) {
+		box-shadow: inset 0 -1px 0 var(--menu-border-bottom-color);
+	}
+}
+
+.mh-head {
+	background: var(--menu-bg-color);
+	color: var(--menu-color-links);
+	margin: 0;
+	padding: 7px 10px 14px;
+	position: relative;
+	text-align: center;
+
+	@include media(lg) {
+		padding: 15px 10px 7px;
+	}
+
+	&.navbar {
+		-webkit-backdrop-filter: blur(13px) saturate(160%);
+		backdrop-filter: blur(13px) saturate(160%);
+		
+		@include media(lg) {
+			box-shadow: inset 0 -1px 0 var(--menu-border-bottom-color);
+		}
+	}
+
+	[class*=container-] {
+		padding: 0;
+	}
+
+	&.mh-sticky.mh-scrolledout {
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+
+	// Text logo
+	.mh-text {
+		display: block;
+		line-height: 20px;
+		overflow: hidden;
+		padding: 10px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	// Logo
+	.mh-logo {
+		background: none center center transparent no-repeat;
+		background-size: contain;
+		display: block;
+		height: 100%;
+		padding: 18px 60px;
+
+		@include media(lg) {
+			padding: 24px 68px;
+		}
+	}
+	
+	// Links
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--menu-color-links-hover);
+		}
+	}
+
+	ul li {
+		> a {
+			font-weight: 500;
+
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		.dropdown-menu, 
+		ul {
+			a {
+				&:hover {
+					color: var(--menu-color-sublinks-hover);
+				}
+			}
+		}
+	}
+
+	// Icons links
+	.icon-link {
+		align-items: center;
+		color: var(--color-theme) !important;
+		display: flex;
+		font-size: 20px;
+		height: 40px;
+		justify-content: center;
+		min-width: 35px;
+
+		&:hover {
+			opacity: .6;
+		}
+
+		&:not(:last-child) {
+			margin-right: 0.5em;
+		}
+
+		@include media(md) {
+			font-size: 26px;
+		}
+	}
+
+	.dropdown-toggle::after {
+		color: var(--color-theme);
+	}
+
+	.mburger {
+		--mb-button-size: 40px;
+		--mb-bar-height: 2px;
+		--mb-bar-spacing: 7px;
+	}
+
+	// Search default
+	.mh-form,
+	// plugin search
+	.dgwt-wcas-sf-wrapp {
+		position: relative;
+
+		input,
+		.dgwt-wcas-search-input {
+			background: var(--menu-search-input) !important;
+			border: none !important;
+			border-radius: 8px !important;
+			font-size: 14px !important;
+			line-height: 40px !important;
+			display: block;
+			box-sizing: border-box !important;
+			height: 40px !important;
+			width: 100% !important;
+			padding: 6px 10px;
+			color: var(--menu-search-button);
+
+			@include media(lg) {
+				line-height: 42px !important;
+				height: 42px !important;
+				padding: 8px 17px;
+			}
+
+			&:-webkit-autofill,
+			&:-webkit-autofill:hover,
+			&:-webkit-autofill:focus,
+			&:-webkit-autofill:active {
+				-webkit-box-shadow: 0 0 0px 1000px var(--menu-search-input) inset !important;
+			}	
+		}
+
+		.btn-search {
+			background-color: transparent;
+			border: none;
+			color: var(--menu-color-links);
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			position: absolute;
+			right: 0;
+			text-align: center;
+			top: 50%;
+			width: 40px;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+	}
+
+	.dgwt-wcas-search-wrapp {
+		max-width: 100% !important;
+	}
+
+	// My account
+	.login-section {
+		font-size: 13px;
+		line-height: 1;
+		text-align: left;
+	}
+
+	.login-link {
+		font-weight: 600;
+
+		i {
+			color: var(--color-theme) !important;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@import "mmenu";
+@import "mburger/mburger";
+@import "mhead";

@@ -1,0 +1,9 @@
+//
+// Gera auxiliadores de opacity
+//
+
+@for $o from 0 through 10 {
+  .op-#{$o} {
+    opacity: $o / 10 !important;
+  }
+}

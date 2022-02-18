@@ -1,0 +1,30 @@
+/*
+ * Cor do fundo
+ */
+body,
+// Plugin feed instagram
+.wdi_feed_theme_1 .wdi_feed_wrapper,
+#wdi_feed_0 .wdi_feed_container {
+  background-color: var(--color-fill) !important;
+}
+
+.wdi_feed_thumbnail_1 .wdi_photo_wrap_inner,
+.wdi_feed_thumbnail_1 .wdi_feed_container {
+  border-color: var(--color-fill) !important;
+  background-color: var(--color-fill) !important;
+}
+
+/* 
+ * Cor do texto
+ */
+// var(--color-text);
+body {
+  color: var(--color-text);
+}
+
+/* 
+ * Cor secundaria do texto
+ */
+ a {
+  color: var(--color-text-secondary-color);
+ }

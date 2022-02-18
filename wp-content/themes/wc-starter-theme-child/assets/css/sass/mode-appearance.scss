@@ -1,0 +1,244 @@
+@import "../../../../wc-starter-theme/assets/plugins/bootstrap/sass/functions";
+@import "../../../../wc-starter-theme/assets/plugins/bootstrap/sass/variables";
+@import "variables";
+
+/**
+  Switch dark mode
+*/
+.color-scheme-toggle {
+  --toggle-border-radius-outer: 12px;
+  --toggle-border-radius-inner: 10px;
+  --toggle-color-fill: var(--color-button-background);
+  --toggle-color-text: var(--color-theme);
+  border-radius: var(--toggle-border-radius-outer);
+  border: 1px solid var(--toggle-color-fill);
+  display: inline-flex;
+  font-size: 0.70588rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.33337;
+  padding: 1px;
+
+  input {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0 0 99.9% 99.9%);
+    clip-path: inset(0 0 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:checked + .text {
+      --toggle-color-text: var(--color-button-text);
+      background: var(--toggle-color-fill);
+      border-color: var(--toggle-color-fill);
+    }
+
+    &:focus {
+      outline: 4px solid var(--color-focus-color);
+      outline-offset: 1px;
+    }
+  }
+
+  .text {
+    border: 1px solid transparent;
+    border-radius: var(--toggle-border-radius-inner);
+    color: var(--toggle-color-text);
+    display: inline-block;
+    text-align: center;
+    padding: 1px 6px;
+    min-width: 42px;
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen {
+  [data-color-scheme="dark"] .color-scheme-toggle {
+    --toggle-color-text: var(--color-theme);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] .color-scheme-toggle {
+    --toggle-color-text: var(--color-theme);
+  }
+}
+
+/**
+  *
+  * Por padrão, a sequência de escrita do estilo deve ser:
+  * classes CSS normal, [data-color-scheme="dark"] e prefers-color-scheme
+  *
+  */
+body {
+  color-scheme: light dark;
+}
+
+body[data-color-scheme="light"] {
+  color-scheme: light;
+}
+
+body[data-color-scheme="dark"] {
+  color-scheme: dark;
+}
+
+/**
+ *
+ * Modo dark
+ *
+ * Tanto para color-scheme dark e auto, as variáveis
+ * possuem o mesmos valores.
+ *
+ */
+
+@media screen {
+  body[data-color-scheme="dark"] {
+    // Cores base
+    --color-fill: #{$black};
+    --color-fill-secondary: #121214;
+    --color-fill-tertiary: #383838;
+    --color-fill-fourth: #303030;
+    --color-theme: #{lighten($color-default, 18%)};
+    --color-theme-ligthen: #{lighten(saturate($color-default, 3%), 25%)};
+    --color-theme-darken: #{darken($color-default, 8%)};
+    // Bordas
+    --color-border-color: #2a2a2a;
+    // Texto
+    --color-text: #ccc;
+    --color-text-secondary-color: #a9a9a9;
+    // Titulo
+    --color-headline: #{$white};
+    // Botão
+    --color-button-background: var(--color-theme);
+    --color-button-text: #{$white};
+    --color-button-background-hover: var(--color-theme-ligthen);
+    --color-button-text-hover: #{$white};
+    // Input
+    --color-input-txt: var(--color-text);
+    --color-input-border-color: #3b3b3b;
+    // Navigation
+    --color-nav-fill: var(--color-fill-fourth);
+    // Sidebar
+    --color-fill-sidebar: #0d0e10;
+    --color-fill-sidebar-border-color: var(--color-fill-sidebar);
+    --color-fill-sidebar-input: var(--color-fill-fourth);
+    // Footer
+    --color-fill-footer: #18181a;
+    --footer-border-color: #2f2f32;
+    --footer-link-color: #e7e7e7;
+    --footer-link-social-color: var(--color-theme);
+    --footer-link-social-hover-color: #ffffff;
+    --footer-link-hover-color: var(--color-theme);
+    --footer-copyright-color: #b3b3b3;
+    // Header shop
+    --menu-bg-color: rgba(22, 22, 24, 0.9);
+    --menu-border-bottom-color: var(--color-border-color);
+    --menu-color-links: var(--color-text);
+    --menu-color-links-hover: var(--color-text-secondary-color);
+    --menu-color-sublinks-hover: var(--color-theme);
+    --menu-search-input: #5a5a5a8a;
+    --menu-search-button: #b5b5b5;
+    // MMenu settings
+    .mm-menu_theme-white {
+      --mm-color-border 				: rgba( 255,255,255, 0.15 ) !important;
+      --mm-color-button				: rgba( 255,255,255, 0.4 ) !important;
+      --mm-color-text 				: rgba( 255,255,255, 0.75 ) !important;
+      --mm-color-text-dimmed			: rgba( 255,255,255, 0.4 ) !important;
+      --mm-color-background 			: var(--color-fill) !important;
+      --mm-color-background-highlight	: rgba( 255,255,255, 0.2 ) !important;
+      --mm-color-background-emphasis	: rgba( 255,255,255, 0.15 ) !important;
+      --mm-shadow						: none !important;
+    }
+    .mm-menu_opened.mm-menu_pagedim-black~.mm-wrapper__blocker {
+      background: #3e3e3e !important;
+    }
+    // Alertas
+    --color-fill-alert: var(--color-fill-tertiary);
+    // Passo a passo checkout
+    --color-step-finished: #{$teal-500};
+    // Caixa de busca
+    --color-fill-search-box: rgba(36, 36, 36, 0.831);
+    --color-fill-search-border-color: var(--color-fill-tertiary);
+  }
+}
+
+/* mode auto */
+@media screen and (prefers-color-scheme: dark) {
+  body[data-color-scheme="auto"] {
+    // Cores base
+    --color-fill: #{$black};
+    --color-fill-secondary: #121214;
+    --color-fill-tertiary: #383838;
+    --color-fill-fourth: #303030;
+    --color-theme: #{lighten($color-default, 18%)};
+    --color-theme-ligthen: #{lighten(saturate($color-default, 3%), 25%)};
+    --color-theme-darken: #{darken($color-default, 8%)};
+    // Bordas
+    --color-border-color: #2a2a2a;
+    // Texto
+    --color-text: #ccc;
+    --color-text-secondary-color: #a9a9a9;
+    // Titulo
+    --color-headline: #{$white};
+    // Botão
+    --color-button-background: var(--color-theme);
+    --color-button-text: #{$white};
+    --color-button-background-hover: var(--color-theme-ligthen);
+    --color-button-text-hover: #{$white};
+    // Input
+    --color-input-txt: var(--color-text);
+    --color-input-border-color: #3b3b3b;
+    // Navigation
+    --color-nav-fill: var(--color-fill-fourth);
+    // Sidebar
+    --color-fill-sidebar: #0d0e10;
+    --color-fill-sidebar-border-color: var(--color-fill-sidebar);
+    --color-fill-sidebar-input: var(--color-fill-fourth);
+    // Footer
+    --color-fill-footer: #18181a;
+    --footer-border-color: #2f2f32;
+    --footer-link-color: #e7e7e7;
+    --footer-link-social-color: var(--color-theme);
+    --footer-link-social-hover-color: #ffffff;
+    --footer-link-hover-color: var(--color-theme);
+    --footer-copyright-color: #b3b3b3;
+    // Header shop
+    --menu-bg-color: rgba(22, 22, 24, 0.9);
+    --menu-border-bottom-color: var(--color-border-color);
+    --menu-color-links: var(--color-text);
+    --menu-color-links-hover: var(--color-text-secondary-color);
+    --menu-color-sublinks-hover: var(--color-theme);
+    --menu-search-input: #5a5a5a8a;
+    --menu-search-button: #b5b5b5;
+    // MMenu settings
+    .mm-menu_theme-white {
+      --mm-color-border 				: rgba( 255,255,255, 0.15 ) !important;
+      --mm-color-button				: rgba( 255,255,255, 0.4 ) !important;
+      --mm-color-text 				: rgba( 255,255,255, 0.75 ) !important;
+      --mm-color-text-dimmed			: rgba( 255,255,255, 0.4 ) !important;
+      --mm-color-background 			: var(--color-fill) !important;
+      --mm-color-background-highlight	: rgba( 255,255,255, 0.2 ) !important;
+      --mm-color-background-emphasis	: rgba( 255,255,255, 0.15 ) !important;
+      --mm-shadow						: none !important;
+    }
+    .mm-menu_opened.mm-menu_pagedim-black~.mm-wrapper__blocker {
+      background: #3e3e3e !important;
+    }
+    // Alertas
+    --color-fill-alert: var(--color-fill-tertiary);
+    // Passo a passo checkout
+    --color-step-finished: #{$teal-500};
+    // Caixa de busca
+    --color-fill-search-box: rgba(36, 36, 36, 0.831);
+    --color-fill-search-border-color: var(--color-fill-tertiary);
+  }
+}

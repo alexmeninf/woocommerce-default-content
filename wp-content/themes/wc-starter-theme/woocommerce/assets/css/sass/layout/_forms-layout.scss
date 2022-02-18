@@ -1,0 +1,63 @@
+form {
+  .form-row {
+
+    label {
+      display: -webkit-box;
+
+      &.checkbox {
+        display: inline;
+      }
+    }
+
+    select {
+      width: 100%;
+    }
+  }
+
+  .form-row-first,
+  .form-row-last {
+    width: 47%;
+    overflow: visible;
+  }
+
+  .form-row-first {
+    float: left;
+
+    /*rtl:raw:
+    float: right;
+    */
+  }
+
+  .form-row-last {
+    float: right;
+  }
+
+  .form-row-wide {
+    clear: both;
+  }
+}
+
+#payment {
+  .form-row {
+    select {
+      width: auto;
+    }
+  }
+
+  .wc-terms-and-conditions,
+  .terms {
+    text-align: left;
+    padding: 0 1em 0 0;
+    float: left;
+  }
+}
+
+.woocommerce-billing-fields,
+.woocommerce-shipping-fields {
+  @include clearfix();
+}
+
+.woocommerce-terms-and-conditions {
+  margin-bottom: 1.618em;
+  padding: 1.618em;
+}

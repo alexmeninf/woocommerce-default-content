@@ -1,0 +1,11 @@
+.categories-post {
+  border-bottom: 1px solid var(--color-border-color);
+  padding: ($default-spacing-y / 4) 0;
+  margin-bottom: $default-spacing-y / 2;
+
+  .list {
+    @include media(sm) {
+      padding-left: 15px;
+    }
+  }
+}

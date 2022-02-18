@@ -1,0 +1,1866 @@
+@font-face {
+  font-family: 'AWF FA';
+  font-style: normal;
+  font-weight: 400;
+  
+  src: url("fonts/fa-regular-400.eot");
+  src: url("fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("fonts/fa-regular-400.woff2") format("woff2"), url("fonts/fa-regular-400.woff") format("woff"), url("fonts/fa-regular-400.ttf") format("truetype"), url("fonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: 'AWF FA';
+  font-style: normal;
+  font-weight: 900;
+  
+  src: url("fonts/fa-solid-900.eot");
+  src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fonts/fa-solid-900.woff2") format("woff2"), url("fonts/fa-solid-900.woff") format("woff"), url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+#awf-settings .far {
+    font-family: 'AWF FA', 'Font Awesome 5 Free';
+    font-weight: 400;
+  }
+
+#awf-settings .fa,
+#awf-settings .fas {
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.awf-spinner-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: -20px;
+  background: rgba(255, 255, 255, 0.5) url(../../../../wp-admin/images/spinner-2x.gif) no-repeat fixed center;
+}
+
+.awf-overlay-popup {
+  position: fixed;
+  display: block;
+  margin: 0;
+  top: 20%;
+  right: 50px;
+  bottom: 20%;
+  left: 200px;
+  padding: 25px;
+  background: white;
+  border: 1px solid #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 1px 15px 0px rgba(0, 0, 0, 0.05), 0 1px 10px 0 rgba(0, 0, 0, 0.03);
+  overflow: auto;
+}
+
+@media screen and (max-width: 960px) {
+  .awf-overlay-popup {
+    left: 50px;
+  }
+}
+
+.awf-overlay-popup-row {
+  display: flex;
+}
+
+.awf-overlay-popup-row.awf-overlay-popup-header-row {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 0;
+  font-size: 30px;
+}
+
+.awf-overlay-popup .awf-close-overlay-popup-btn {
+  position: fixed;
+  display: block;
+  top: 20%;
+  right: 50px;
+  margin-top: 25px;
+  margin-right: 25px;
+  line-height: 45px;
+  color: #666666;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.awf-overlay-popup .awf-close-overlay-popup-btn:hover {
+  color: #23282d;
+}
+
+.awf-overlay-popup .awf-close-overlay-popup-btn::before {
+  content: "\f057";
+  display: block;
+  font-size: 45px;
+}
+
+#awf-settings .awf-overlay-popup-row button.button-secondary {
+  height: 40px;
+}
+
+#awf-settings .awf-overlay-popup-row input[type="text"],
+#awf-settings .awf-overlay-popup-row select {
+  margin-right: 10px;
+  width: 300px;
+  height: 40px;
+}
+
+.awf-overlay-popup-subheading {
+  padding: 40px 10px 20px 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.awf-overlay-popup-row.awf-info-notice {
+  margin-bottom: 20px;
+}
+
+.awf-overlay-popup .awf-return-to-main-popup-btn {
+  position: fixed;
+  display: block;
+  top: 20%;
+  left: 200px;
+  margin-top: 25px;
+  margin-left: 25px;
+  line-height: 45px;
+  color: #666666;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.awf-overlay-popup .awf-return-to-main-popup-btn:hover {
+  color: #23282d;
+}
+
+.awf-overlay-popup .awf-return-to-main-popup-btn::before {
+  content: "\f060";
+  display: block;
+  font-size: 45px;
+  font-weight: 900;
+}
+
+.awf-level-2-popup .awf-overlay-popup-row.awf-overlay-popup-header-row {
+  margin-left: 65px;
+}
+
+.awf-hidden {
+  display: none;
+}
+
+#awf-settings {
+    margin-top: 1em;
+}
+
+#awf-settings select, 
+#awf-settings textarea, 
+#awf-settings input[type="text"], 
+#awf-settings input[type="email"], 
+#awf-settings input[type="number"] {
+  padding: 3px 8px;
+  line-height: 26px;
+  min-height: 32px;
+}
+
+#awf-settings select, 
+#awf-settings textarea, 
+#awf-settings input[type="text"], 
+#awf-settings input[type="email"], 
+#awf-settings input[type="number"],
+#awf-settings input[type=checkbox],
+#awf-settings input[type=radio] {
+  border: 1px solid #dddddd;
+}
+
+#awf-settings input[type=checkbox] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+#awf-settings select {
+  padding-right: 24px;
+}
+
+#awf-settings > h2 {
+  margin: 30px 0 10px;
+  font-size: 18px;
+}
+
+#awf-settings table.form-table fieldset p.description {
+  display: inline;
+	vertical-align: middle;
+  font-size: 13px;
+}
+
+#awf-settings .awf-secondary-label {
+  margin-right: 3px;
+  margin-left: 3px;
+  vertical-align: baseline;
+}
+
+#awf-settings .button-secondary {
+  display: inline-block;
+  margin: 0;
+  height: auto;
+  min-height: 32px;
+  padding: 3px 10px;
+  vertical-align: top;
+  color: #555;
+  font-size: 13px;
+  text-decoration: none;
+  line-height: 22px;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  border-color: #ccc;
+  background: #f7f7f7;
+  box-shadow: 0 1px 0 #ccc;
+}
+
+#awf-settings a.button-secondary.awf-icon,
+#awf-settings button.button-secondary.awf-icon {
+  display: inline-block;
+  width: 35px;
+  height: 33px;
+  padding: 0;
+  line-height: 31px;
+  color: #999;
+  font-family: Dashicons;
+  font-size: 15px;
+  text-align: center;
+}
+
+.awf-fa-icon::before {
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-weight: 400;
+}
+
+.awf-fa-icon.awf-fas-icon::before {
+  font-weight: 900;
+}
+
+#awf-settings .button-secondary.awf-fa-icon {
+  display: inline-block;
+  /*margin-top: 0.2em;
+  margin-bottom: 0.2em;*/
+  width: 35px;
+  height: 33px;
+  padding: 0;
+  /*line-height: 31px;*/
+  color: #999;
+}
+
+#awf-settings button.button-secondary.awf-fa-icon-text-btn {
+  position: relative;
+  padding-left: 40px;
+  padding-right: 15px;
+  height: 40px;
+}
+
+#awf-settings button.button-secondary.awf-fa-icon-text-btn::before {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #666666;
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#awf-settings button.button-secondary.awf-fa-icon-text-btn:hover::before {
+  color: #23282d;
+}
+
+#awf-settings a.button-secondary.awf-icon:hover,
+#awf-settings button.button-secondary.awf-icon:hover,
+#awf-settings .button-secondary:hover {
+  color: #23282d;
+  background: #fafafa;
+  border-color: #ccc;
+}
+
+.awf-delete-btn::before {
+  content: "\f182";
+}
+
+.awf-add-btn::before {
+  content: "\f132";
+  position: relative;
+  top: 1px;
+}
+
+.awf-edit-preset-btn::before {
+  content: "\f111";
+}
+
+.awf-popup-preset-templates-btn::before,
+.awf-popup-filter-templates-btn::before {
+  content: "\f5aa";
+}
+
+#awf-settings.awf-preset-settings table.form-table select, 
+#awf-settings table.form-table textarea, 
+#awf-settings table.form-table input[type="text"], 
+#awf-settings table.form-table input[type="email"], 
+#awf-settings table.form-table input[type="number"], 
+#awf-settings table.form-table input.regular-input {
+  width: 100%;
+}
+
+#awf-settings h3 > .woocommerce-help-tip {
+  margin: 1px 0px 0 1.5em;
+  vertical-align: top;
+}
+
+#awf-settings .blockUI.blockOverlay::before {
+  height: 33px;
+  width: 33px;
+}
+
+#awf-settings .awf-buttons-column {
+  text-align: right;
+}
+
+#awf-settings .awf-buttons-column .awf-filter-toggle-btn {
+  margin-left: 15px;
+}
+
+#awf-settings table.widefat {
+  border-collapse: collapse;
+  background: none;
+}
+
+#awf-settings table.widefat td {
+  padding: 10px;
+  vertical-align: middle;
+	background: #fff;
+}
+
+#awf-settings table.widefat > tfoot > tr > td {
+  padding: 15px;
+  background: #f9f9f9;
+}
+
+#awf-settings table.widefat > tbody > tr:nth-child(odd) > td {
+	background: #fbfbfb;
+}
+
+#awf-settings table.widefat td.sort-handle {
+  cursor: move;
+  padding: 0 10px;
+  width: 17px;
+  font-size: .7em;
+  text-align: center;
+}
+
+#awf-settings table.widefat td.sort-handle::after {
+  content: '\f333';
+  font-family: Dashicons;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 1;
+  color: #999;
+  display: block;
+  width: 17px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#awf-settings table.widefat > tbody > tr.awf-sortable-placeholder {
+  height: 80px;
+  background: #ffffff;
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+}
+
+#awf-settings table.widefat > tbody > tr.awf-sortable-placeholder > td {
+  background: #ffffff;
+  box-shadow: inset 0px 0px 50px 0px #E7E7E7;
+}
+
+#awf-settings table.widefat > tbody > tr.ui-sortable-helper {
+  display: table-row;
+  height: 60px;
+  width: 100%;
+  background: #ffffff;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+#awf-settings table.widefat > tbody > tr.ui-sortable-helper > td {
+  display: table-cell;
+  max-height: 50px;
+  background: #ffffff;
+}
+
+#awf-settings table.widefat > tbody > tr.awf-filter-wrapper.ui-sortable-helper > td {
+  display: block;
+}
+
+#awf-settings table.widefat > tbody > tr.ui-sortable-helper > td > table {
+  width: 100%;
+}
+
+#awf-settings > table th.awf-buttons-column {
+  width: 50px;
+}
+
+#awf-settings > table th select {
+  width: 100%;
+}
+
+.awf-code-textarea {
+  height: 150px;
+}
+
+.woocommerce #awf-settings table.form-table th.awf-info-notice-container {
+  padding-right: 10px;
+}
+
+#awf-settings .awf-info-notice {
+	display: block;
+	position: relative;
+	background: #f8f8f8;
+	padding: 15px 15px 15px 40px;
+	font-size: 13px;
+	font-weight: 400;
+	border-radius: 3px;
+	border: 1px solid #dddddd;
+	border-left: 5px solid #eb2222;
+}
+
+#awf-settings .awf-info-notice::before {
+	content: "\f05a";
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translate(0,-50%);
+	margin-right: auto;
+	margin-left: auto;
+	color: #0073aa;
+	font-family: 'AWF FA', 'Font Awesome 5 Free';
+	font-size: 16px;
+	font-weight: 900;
+}
+
+/* Filter Presets Tab */
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr {
+  border-bottom: 1px solid #eeeeee;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr:hover > td {
+	background: #f4f4f4;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-preset-id-column,
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-preset-name-column,
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-associations-column {
+  cursor: default;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-preset-id-column {
+  width: 2em;
+  max-width: 3em;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-preset-comments-column {
+  color: #999999;
+  font-size: 16px;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr > td.awf-buttons-column {
+  min-width: 90px;
+}
+
+#awf-settings .awf-presets-table .button-secondary.awf-delete-btn {
+  margin-right: 15px;
+}
+
+#awf-settings table.widefat.awf-presets-table > tbody > tr.awf-sortable-placeholder > td {
+  background: #F8F8F8;
+  box-shadow: none;
+}
+
+#awf-settings.awf-preset-settings {
+  max-width: 88%;
+}
+
+@media( max-width: 900px ) {
+
+  #awf-settings.awf-preset-settings {
+    max-width: 100%;
+  }
+  
+}
+
+#awf-settings.awf-preset-settings .awf-preset-breadcrumb {
+  display: flex;
+  align-items: baseline;
+  margin: 1.2em 0 2em;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 400;
+  background: #fafafa;
+  border: 1px solid #dddddd;
+}
+
+#awf-settings.awf-preset-settings .awf-preset-breadcrumb > a {
+	line-height: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#awf-settings.awf-preset-settings .awf-preset-breadcrumb .awf-breadcrumb-preset-name {
+  flex-grow: 1;
+}
+
+#awf-settings.awf-preset-settings .awf-preset-breadcrumb > span.awf-breadcrumb-separator {
+  align-self: center;
+  height: initial;
+	line-height: 50px;
+  font-size: 12px;
+  color: #999;
+}
+
+.awf-preset-settings > h2:first-of-type {
+  font-size: 1.1em;
+}
+
+#awf-settings #awf-associations-select {
+  margin: 5px 5px 5px 0;
+}
+
+#awf-settings #awf-taxonomy-associations-select {
+  margin: 5px 0;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper {
+  background: #fbfbfb;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper > td {
+  padding: 0;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper > td > table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-header td {
+  background: #eaeaea;
+  border-top: 1px solid #d1d1d1;
+  border-bottom: 1px solid #fff;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-header:hover td {
+  background: #f7f7f7;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper.awf-filter-collapsed .awf-filter-header:hover td {
+  background: #f4f4f4;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper.awf-filter-collapsed .awf-filter-header > td {
+  background: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper.awf-filter-collapsed .awf-filter-header:hover {
+  border: 1px solid #e8e8e8;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-header td.awf-preset-filter-title {
+  cursor: default;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-header td.awf-preset-filter-title .awf-preset-filter-title-label {
+  font-size: 0.8em;
+	color: #c4c4c4;
+	font-style: italic;
+}
+
+.awf-filter-toggle-btn:before {
+  content: "\f343";
+}
+
+.awf-filter-collapsed .awf-filter-toggle-btn:before {
+  content: "\f347";
+}
+
+#awf-settings .widefat a.awf-collapse-filter-btn {
+  margin-top: 1em;
+  width: 100%;
+  background: #eaeaea;
+  box-shadow: none;
+}
+
+#awf-settings .widefat a.awf-collapse-filter-btn:hover {
+  background: #f7f7f7;
+}
+
+#awf-settings .widefat .awf-collapse-filter-btn::before {
+  content: "\f343";
+}
+
+.awf-filter-collapsed .awf-filter-options-container {
+  display: none;
+}
+
+#awf-settings table.widefat .awf-filter-options {
+  background: #f5f5f5;
+  border-top: 1px solid #eeeeee;
+}
+
+#awf-settings .awf-filter-options .woocommerce-help-tip {
+  float: right;
+  display: block;
+  margin-top: 5px;
+}
+
+#awf-settings .awf-filter-options label > .woocommerce-help-tip {
+  float: none;
+  display: inline-block;
+  margin: 0 5px 0 5px;
+  width: 20px;
+  min-width: 20px;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table {
+  /*width: 100%;*/
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table th {
+  border: none;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table td {
+  min-height: 24px;
+  padding: 5px;
+  vertical-align: middle;
+	background: #f7f7f7;
+  border: none;
+  border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #fafafa;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table .awf-buttons-column {
+  text-align: center;
+  padding: 8px 10px;
+}
+
+#awf-settings table.widefat .awf-filter-options select,
+#awf-settings table.widefat .awf-filter-options input[type=text] {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#awf-settings table.widefat .awf-filter-options input[type=text] {
+  padding: 3px 6px;
+}
+
+#awf-settings table.widefat .awf-filter-options input[type=checkbox] {
+  margin-right: 1em;
+}
+
+#awf-settings .awf-filter-options-table {
+  width: 100%;
+}
+
+#awf-settings table.widefat .awf-filter-options-table > tbody > tr > td {
+  background: none;
+}
+
+#awf-settings table.widefat .awf-filter-options-table > tbody > tr > td:first-child {
+  width: 210px;
+  vertical-align: top;
+}
+
+/* #awf-settings table.widefat .awf-filter-options-table > tbody > tr > td:first-child .woocommerce-help-tip  {
+  margin-top: 7px;
+} */
+
+#awf-settings .awf-filter-options .awf-ppp-values-table td:nth-child(1) {
+  padding-left: 1em;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table .awf-add-ppp-value-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table .awf-add-ppp-value-container > div {
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table .awf-add-ppp-value-container > div:last-child {
+  flex-grow: 1;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table .awf-add-ppp-value-container > div:last-child label {
+  margin-left: 5px;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table tfoot label {
+  margin-right: 5px;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table tfoot input[type=text] {
+  width: auto;
+}
+
+#awf-settings .awf-filter-options .awf-ppp-values-table tfoot button {
+  margin-top: 5px;
+}
+
+#awf-settings table.widefat .awf-filter-style-container-label-container {
+  vertical-align: top;
+}
+
+#awf-settings .awf-collapsed-on-container {
+  margin-top: 5px;
+}
+
+#awf-settings .awf-range-type-filter .awf-hide-for-range-type {
+  display: none;
+}
+
+#awf-settings .awf-range-slider-filter .awf-hide-for-range-slider,
+#awf-settings .awf-daterangepicker-filter .awf-hide-for-daterangepicker {
+  display: none;
+}
+
+#awf-settings .awf-hierarchical-sbs-container,
+#awf-settings .awf-hide-preset-submit-btn-container {
+  display: block;
+  margin-top: 10px;
+}
+
+#awf-settings .awf-filter-options .awf-hierarchical-sbs-container span.woocommerce-help-tip,
+#awf-settings .awf-filter-options .awf-hide-preset-submit-btn-container span.woocommerce-help-tip {
+  float: none;
+  display: inline-block;
+  margin:  0 5px 0 5px;
+  width: 20px;
+  min-width: 20px;
+}
+
+#awf-settings .awf-filter-wrapper.awf-hierarchical-sbs-enabled .awf-hide-for-hierarchical-sbs {
+  display: none;
+}
+
+#awf-settings .awf-filter-options .awf-filter-style-select-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+}
+
+#awf-settings .awf-filter-options .awf-filter-style-select {
+  flex: 1;
+}
+
+#awf-settings .button-secondary.awf-icon.awf-style-options-btn {
+  flex: 0;
+  flex-basis: auto;
+  margin-left: 10px;
+  height: inherit;
+  box-shadow: none;
+}
+
+#awf-settings .awf-filter-options .awf-style-options-btn::before {
+  content: "\f343";
+  font-size: 16px;
+}
+
+#awf-settings .awf-style-options-btn:hover {
+  color: #23282d;
+}
+
+#awf-settings .awf-filter-options .awf-hide-style-options-btn .awf-style-options-btn {
+  display: none;
+}
+
+#awf-settings .awf-filter-options .awf-style-options-collapsed .awf-style-options-btn::before {
+  content: "\f347";
+}
+
+#awf-settings .awf-style-options-container,
+#awf-settings .awf-autocomplete-options-container {
+  visibility: inherit;
+  margin-top: 1em;
+  width: auto;
+  height: inherit;
+  padding: 10px;
+  background: #fcfcfc;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+}
+
+#awf-settings .awf-filter-options .awf-style-options-collapsed .awf-style-options-container {
+  visibility: hidden;
+  height: 0;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-hover,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-active,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-active-hover,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-example {
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon.awf-solid,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-hover.awf-solid,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-active.awf-solid,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-filter-icon-active-hover.awf-solid,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-example.awf-solid {
+  font-weight: 900;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text].awf-filter-icon,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text].awf-filter-icon-hover,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text].awf-filter-icon-active,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text].awf-filter-icon-active-hover {
+  width: 3em;
+  min-width: 3em;
+  text-align: center;
+}
+
+#awf-settings .awf-icons-examples-container {
+  margin-top: 2em;
+  text-align: center;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options span.awf-icon-example {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  font-size: 1.5em;
+}
+
+#awf-settings .awf-icons-preview-container,
+#awf-settings .awf-icons-options-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#awf-settings .awf-icons-preview-container h4 {
+  margin: 5px 0 25px;
+}
+
+#awf-settings .awf-icons-options-container h4 {
+  margin: 5px 0 15px;
+}
+
+#awf-settings .awf-icons-preview-container {
+  margin-left: 3em;
+}
+
+#awf-settings .awf-icons-preview-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#awf-settings .awf-icons-preview-container .awf-filter-icon {
+  margin-right: 5px;
+}
+
+#awf-settings .awf-icons-options-container label {
+  margin: 0 5px;
+}
+
+#awf-settings .awf-icons-options-container table {
+  border: 1px solid #eeeeee;
+  border-collapse: collapse;
+}
+
+#awf-settings .awf-icons-options-container table td {
+  padding: 5px;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-preview {
+  padding: 10px;
+  text-align: center;
+  background-color: #FCFCFC;
+  border-color: #bbb;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-preview > div {
+  margin-bottom: 1em;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-preview label {
+  font-size: 1.2em;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-icon-preview label > span {
+  vertical-align: middle;
+}
+
+.awf-tip-msg {
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  padding: 5px;
+  width: 140px;
+  font-size: 10px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.awf-tip-msg::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+#awf-settings .awf-one-image-container {
+  display: flex;
+  align-items: center;
+}
+
+#awf-settings .awf-one-image-container {
+  margin-top: 1em;
+}
+
+/*#awf-settings .awf-one-image-container > *,*/
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table .awf-image-term-container > td {
+  background: none;
+  border: none;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table .awf-image-term-container > td:first-child {
+  white-space: nowrap;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+#awf-settings .awf-one-image-container > .awf-image-preview,
+#awf-settings .awf-one-image-container > .awf-image-url-wrapper {
+  margin-right: 1em;
+}
+
+#awf-settings .awf-one-image-container > .awf-image-url-wrapper {
+  flex-grow: 1;
+}
+
+#awf-settings .awf-image-term-container > .awf-image-url-wrapper {
+  width: 70%;
+}
+
+#awf-settings .awf-image-preview {
+  width: 33px;
+  height: 33px;
+  border: 2px solid #e3e3e3;
+  border-style: inset;
+  border-radius: 50%;
+}
+
+#awf-settings .awf-image-preview:hover {
+  border: 2px solid #C91C1F;
+}
+
+/*#awf-settings .awf-one-image-container .awf-image-preview {
+  margin-right: 1em;
+}*/
+
+#awf-settings .awf-filter-options .awf-terms-images-container {
+  margin-top: 1em;
+  width: 100%;
+}
+
+#awf-settings .awf-image-url-container {
+  display: flex;
+  align-items: center;
+}
+
+#awf-settings table.widefat .awf-image-url-container label.awf-image-url-label {
+  margin: 1px -78px 1px 0;
+  padding: 4px 5px 0;
+  height: 25px;
+  width: 65px;
+  background: #fafafa;
+  z-index: 1;
+}
+
+#awf-settings table.widefat .awf-image-url-container input[type=text].awf-one-image-url,
+#awf-settings table.widefat .awf-image-url-container input[type=text].awf-image-url {
+  padding-left: 85px;
+  height: 33px;
+  width: 100%;
+}
+
+#awf-settings .awf-media-handler-btn::before {
+  content: "\f161";
+}
+
+#awf-settings tr.awf-term-colour-container > td:first-child {
+  vertical-align: top;
+}
+
+#awf-settings .wp-picker-container .wp-color-result.button {
+  height: 33px;
+  margin: 0 6px 6px 0;
+  padding: 0 0 0 30px;
+  font-size: 11px
+}
+
+.wp-color-result-text {
+  margin-right: 1px;
+  line-height: 30px;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options table.awf-custom-terms-container,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options table.awf-range-stars-container {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options table.awf-custom-terms-container tbody,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options table.awf-range-stars-container tbody {
+  border: 1px solid #e1e1e1;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container th,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-range-stars-container th {
+  text-align: center;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container td,
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-range-stars-container td {
+  text-align: center;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text],
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-range-stars-container input[type=text] {
+  height: 35px;
+  min-width: 8em;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container td.awf-filter-icons-column-dark-l {
+  background: #fdfdfd;
+  border-left: 1px solid #e8e8e8;
+}
+
+#awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container td.awf-filter-icons-column-dark-r {
+  background: #fdfdfd;
+  border-right: 1px solid #e8e8e8;
+}
+
+.awf-range-type-options > * {
+  margin-top: 1.2em;
+}
+
+.awf-range-type-options > div > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#awf-settings table.widefat .awf-filter-options .awf-range-type-options > div > input[type=text] {
+  width: auto;
+}
+
+#awf-settings .awf-custom-range-value-container > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+#awf-settings .awf-custom-range-value-container button.button-secondary {
+  margin: 5px 15px 5px 0px;
+  padding-right: 15px;
+}
+
+#awf-settings .awf-delete-custom-range-value-btn::after {
+  content: "\f057";
+  position: relative;
+  top: 0px;
+  right: -10px;
+  vertical-align: text-top;
+  color: #a61919;
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+#awf-settings .awf-delete-custom-range-value-btn:hover::after {
+  color: #CB1414;
+}
+
+#awf-settings .awf-add-custom-range-value-btn {
+  margin-left: 0.5em;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options span.woocommerce-help-tip,
+#awf-settings .awf-filter-options .awf-style-options-container span.woocommerce-help-tip,
+#awf-settings .awf-autocomplete-options-container span.woocommerce-help-tip {
+  float: none;
+  display: inline-block;
+  margin:  0.3em 0.2em 0 0.4em;
+  width: 20px;
+  min-width: 20px;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options h4 span.woocommerce-help-tip,
+#awf-settings .awf-filter-options .awf-style-options-container h4 span.woocommerce-help-tip {
+  display: inline-block;
+  margin: 0 0 0 5px;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container {
+  border-collapse: collapse;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr td {
+  border-top: none;
+  border-bottom: 1px solid #efefef;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr:first-of-type td {
+  padding-top: 0;
+  border-bottom: none;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr:last-of-type td {
+  min-height: 45px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.awf-sortable-placeholder {
+  height: 80px;
+  background: #fdfdfd;
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.awf-sortable-placeholder > td {
+  background: #fdfdfd;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.ui-sortable-helper {
+  display: table-row;
+  height: 60px;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.ui-sortable-helper > td {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  max-height: 50px;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.ui-sortable-helper > td.sort-handle {
+  vertical-align: middle;
+  padding: 10px;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.awf-filter-wrapper.ui-sortable-helper > td {
+  display: block;
+}
+
+#awf-settings .awf-filter-options .awf-range-type-options table.awf-taxonomy-range-container > tbody > tr.ui-sortable-helper > td > table {
+  width: 100%;
+}
+
+.awf-style-options-container > div {
+  margin: 0.5em 0;
+}
+
+.awf-range-type-options .awf-range-type-options-row,
+.awf-style-options-container > div.awf-range-slider-options-container {
+  display: flex;
+  margin-bottom: 0.5em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.awf-range-type-options .awf-range-type-advanced {
+  padding: 10px;
+  background: #fcfcfc;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+}
+
+.awf-range-type-options .awf-range-type-advanced .awf-range-type-options-row > div,
+.awf-style-options-container > div.awf-range-slider-options-container > div {
+  margin: 10px;
+}
+
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-steps-container,
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-tooltips-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-tooltips-container {
+  flex-grow: 1;
+}
+
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-steps-container label,
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-tooltips-container label {
+  white-space: nowrap;
+}
+
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-steps-container span.woocommerce-help-tip,
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-tooltips-container span.woocommerce-help-tip {
+  align-self: center;
+}
+
+.awf-style-options-container > div.awf-range-slider-options-container > div.awf-range-slider-tooltips-container select {
+  flex-grow: 1;
+}
+
+.awf-style-options-container > button.woocommerce-save-button {
+  width: 100%;
+}
+
+#awf-settings div.awf-range-slider-preview {
+  margin: 60px 25px 70px;
+}
+
+.awf-range-slider-preview .noUi-value {
+  margin-top: 5px;
+}
+
+.awf-style-options-container .awf-interactive-slider-tooltips-container {
+  display: flex;
+  margin: 35px 8px -35px;
+  justify-content: space-between;
+}
+
+#awf-settings table.widefat .awf-filter-options .awf-style-options-container .awf-interactive-slider-tooltips-container input {
+  width: 100px;
+  text-align: center;
+}
+
+.awf-stars-preview {
+  position: relative;
+  padding-left: 74px;
+}
+
+.awf-stars-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #bbb;
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.5px
+}
+
+.awf-stars-preview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  color: #bbb;
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.5px
+}
+
+.awf-stars-preview.awf-1-stars::after {
+  width: 14px;
+}
+
+.awf-stars-preview.awf-2-stars::after {
+  width: 28px;
+}
+
+.awf-stars-preview.awf-3-stars::after {
+  width: 42px;
+}
+
+.awf-stars-preview.awf-4-stars::after {
+  width: 56px;
+}
+
+.awf-stars-preview.awf-5-stars::after {
+  width: 70px;
+}
+
+#awf-settings .awf-filter-options td.awf-terms-limitations-container {
+  padding-top: 0;
+}
+
+#awf-settings .awf-filter-options td.awf-terms-limitations-container .terms-limitation-mode-select {
+  margin: 5px 0 10px 0;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table.awf-terms-limitations-table {
+  min-width: 25rem;
+  border-spacing: 0;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table.awf-terms-limitations-table tfoot td {
+  background: #f1f1f1;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table .awf-terms-limitation-container td:nth-child(1) {
+  padding-left: 1em;
+}
+
+#awf-settings .awf-filter-options .awf-filter-options-secondary-table.awf-terms-limitations-table tr td:nth-child(2) {
+  width: 40px;
+  text-align: center;
+}
+
+#awf-settings .awf-autocomplete-options-container.awf-collapsed {
+  display: none;
+}
+
+#awf-settings .awf-autocomplete-options-container {
+  display: block;
+}
+
+#awf-settings .awf-autocomplete-options-container > div {
+  margin-bottom: 10px;
+}
+
+.awf-daterangepicker-filter .awf-style-options-container {
+  max-width: 425px;
+}
+
+.awf-style-options-container > div.awf-daterangepicker-options-container > div.awf-options-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.awf-style-options-container > div.awf-daterangepicker-options-container > div.awf-options-row > label {
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.awf-style-options-container > div.awf-daterangepicker-options-container > div.awf-options-row > select {
+  width: auto;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 782px) {
+  #awf-settings table.widefat .awf-filter-options-table > tbody > tr > td {
+    display: block;
+    width: auto;
+    vertical-align: middle;
+  }
+  
+  #awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-custom-terms-container input[type=text], #awf-settings table.widefat .awf-filter-wrapper .awf-filter-options .awf-range-stars-container input[type=text] {
+    min-width: 25px;
+  }
+}
+/** Apply Preset & Filter Template Popup */
+
+.awf-apply-preset-template-container,
+.awf-apply-filter-template-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  min-width: 300px;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 960px) {
+  .awf-apply-preset-template-container,
+  .awf-apply-filter-template-container {
+    width: 100%;
+  }
+}
+
+#awf-settings .awf-apply-preset-template-container select,
+#awf-settings .awf-apply-preset-template-container button.button-secondary,
+#awf-settings .awf-apply-filter-template-container select,
+#awf-settings .awf-apply-filter-template-container button.button-secondary {
+  width: 100%;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+#awf-settings .awf-apply-preset-template-container label,
+#awf-settings .awf-apply-filter-template-container label {
+  width: 100%;
+  padding-left: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/** end of Apply Preset & Filter Template Popup */
+
+/* end of Filter Presets Tab */
+
+/* Styles Tab */
+/* end of Styles Tab */
+
+/* Product Lists Tab */
+
+#awf-settings.awf-tab-product-list-settings table.form-table,
+#awf-settings.awf-tab-product-list-settings table.widefat.awf-template-options-table {
+  max-width: 1000px;
+}
+
+.woocommerce #awf-settings.awf-tab-product-list-settings table.form-table th.awf-info-notice-container {
+  padding-right: 0;
+}
+
+#awf-settings.awf-tab-product-list-settings table.form-table td.forminp-text {
+  padding-right: 0;
+}
+
+#awf-settings table.widefat.awf-template-options-table > tbody > tr {
+  border-bottom: 1px solid #ececec;
+}
+
+#awf-settings table.widefat.awf-template-options-table > tbody > tr {
+  border-bottom: 1px solid #ececec;
+}
+
+#awf-settings table.widefat.awf-template-options-table > tbody > tr:nth-child(odd):hover > td,
+#awf-settings table.widefat.awf-template-options-table > tbody > tr:hover td {
+  background: #f4f4f4;
+}
+
+#awf-settings .awf-template-options-table td select {
+  background-color: transparent;
+  border: none;
+}
+
+#awf-settings.awf-tab-product-list-settings .awf-template-options-table td.awf-template-option-name {
+  width: 100%;
+}
+
+#awf-settings.awf-tab-product-list-settings .awf-template-options-table td label {
+  line-height: 32px;
+  font-weight: 600;
+  padding-right: 10px;
+}
+
+#awf-settings.awf-tab-product-list-settings .awf-template-options-table tr.awf-template-option-active-badges.hide-priority td.awf-template-option-priority input {
+  visibility: hidden;
+}
+
+#awf-settings .awf-template-options-table tfoot th {
+  white-space: nowrap;
+}
+
+#awf-settings .awf-template-options-table tfoot th .fa-angle-up {
+  padding: 0 8px 0 5px;
+}
+
+#awf-settings .awf-template-options-table tfoot th.awf-template-option-hook-label .fa-angle-up {
+  padding-left: 10px;
+}
+
+/* end of Product Lists Tab */
+
+/* Templates Tab */
+
+#awf-settings.awf-tab-templates-settings select,
+#awf-settings.awf-tab-templates-settings button.button-secondary {
+  height: 40px;
+}
+
+.awf-templates-subheader {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 25px 0 0;
+  padding: 10px 5px 10px 10px;
+  color: #50575e;
+  background: #ebebeb;
+  border: 1px solid #dadada;
+}
+
+.awf-templates-subheader h3 {
+  color: #50575e;
+}
+
+#awf-settings.awf-tab-templates-settings .awf-templates-subheader button.button-secondary {
+  margin-left: 15px;
+}
+
+#awf-settings button.button-secondary.awf-popup-create-preset-template-btn::before,
+#awf-settings button.button-secondary.awf-popup-create-filter-template-btn::before {
+  content: "\f067";
+}
+
+#awf-settings button.button-secondary.awf-display-create-filter-template-btn::before {
+  content: "\f0c7";
+}
+
+#awf-settings button.button-secondary.awf-import-preset-template-btn::before,
+#awf-settings button.button-secondary.awf-import-filter-template-btn::before {
+  content: "\f574";
+}
+
+.awf-template-row .awf-popup-rename-preset-template-btn::before,
+.awf-template-row .awf-popup-rename-filter-template-btn::before {
+  content: "\f02b";
+}
+
+.awf-template-row .awf-export-preset-template-btn::before,
+.awf-template-row .awf-export-filter-template-btn::before {
+  content: "\f56e";
+}
+
+.awf-template-row .awf-delete-preset-template-btn::before,
+.awf-template-row .awf-delete-filter-template-btn::before {
+  content: "\f2ed";
+}
+
+.awf-settings-tb-header-row {
+  display: flex;
+  padding: 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+#awf-settings.awf-tab-templates-settings .awf-settings-tb-header-row select {
+  margin: 0;
+  width: 100%;
+  height: 45px;
+  min-width: 300px;
+  max-width: 100%;
+}
+
+.awf-settings-tb-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  padding: 10px;
+  align-items: center;
+  border: 1px solid #e1e1e1;
+  border-top: none;
+  background: #fbfbfb;
+}
+
+#awf-settings.awf-tab-templates-settings .awf-templates-empty-notice,
+#awf-settings.awf-tab-templates-settings .awf-templates-subheader,
+#awf-settings.awf-tab-templates-settings .awf-settings-tb-header-row,
+#awf-settings.awf-tab-templates-settings .awf-settings-tb-row {
+  max-width: 800px;
+  min-width: 400px;
+  box-sizing: border-box;
+}
+
+#awf-settings.awf-tab-templates-settings .awf-templates-empty-notice {
+  margin: 50px 0;
+  text-align: center;
+  color: #999999;
+  font-size: 15px;
+}
+
+.awf-settings-tb-row.awf-template-row:hover {
+  background: #f3f3f3;
+}
+
+.awf-templates-subheader .awf-settings-tb-row-buttons-container,
+.awf-settings-tb-row .awf-template-version,
+.awf-settings-tb-row .awf-settings-tb-row-buttons-container {
+  flex-grow: 0;
+}
+
+#awf-settings .awf-template-row button.button-secondary.awf-fa-icon {
+  margin-left: 20px;
+  width: 40px;
+  color: #666666;
+  font-size: 15px;
+}
+
+#awf-settings .awf-template-row button.button-secondary.awf-fa-icon:hover {
+  color: #23282d;
+}
+
+.awf-settings-tb-row .awf-template-version .woocommerce-help-tip {
+  padding-right: 10px;
+}
+
+#awf-settings .awf-settings-tb-row-buttons-container button.button-secondary {
+  margin: 5px;
+}
+
+.awf-settings-tb-row .awf-template-version {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  font-weight: 900;
+  cursor: default;
+}
+
+.awf-settings-tb-row .awf-template-name {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.awf-popup-rename-filter-template .awf-overlay-popup-row.awf-overlay-popup-header-row {
+  margin-bottom: 100px;
+}
+
+.awf-overlay-popup-row.awf-create-preset-template-select-container,
+.awf-overlay-popup-row.awf-create-filter-template-select-container {
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.awf-overlay-popup-row.awf-create-preset-template-select-container label,
+.awf-overlay-popup-row.awf-create-filter-template-select-container label {
+  width: 100%;
+  padding-bottom: 10px;
+  padding-left: 3px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.awf-overlay-popup-row.awf-create-filter-template-btn-container {
+  padding-top: 25px;
+}
+
+/* end of Templates Tab */
+
+/* SEO Tab */
+
+#awf-settings #awf_add_seo_filters_btn {
+  margin-top: 5px;
+}
+
+#awf-settings #awf_add_seo_filters_btn i {
+  margin-right: 5px;
+}
+
+#awf-settings table.widefat.awf-seo-page-title-example-table {
+  margin: 25px 0 35px;
+  border: none;
+}
+
+#awf-settings table.widefat.awf-seo-page-title-example-table th {
+  padding: 3px;
+  font-size: 12px;
+  border: none;
+}
+
+#awf-settings table.widefat.awf-seo-page-title-example-table td {
+  padding: 20px 10px;
+}
+
+#awf-settings table.widefat.awf-seo-page-title-example-table > tbody > tr > td {
+  font-family: "Source Sans Pro", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 1px 0px 1px rgba(0, 0, 0, 0.5);
+  background: #ebebeb;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table {
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table span.woocommerce-help-tip {
+  vertical-align: text-bottom;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table th span {
+  vertical-align: bottom;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table th span.woocommerce-help-tip {
+  margin-left: 3px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table td {
+  border-bottom: 2px solid #f1f1f1;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr td {
+  vertical-align: top;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr td.sort-handle {
+  padding-top: 16px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table > tbody > tr.awf-sortable-placeholder > td {
+  background: #F8F8F8;
+  box-shadow: none;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-odd td {
+  background: #fbfbfb;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-even td {
+  background: #fff;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table td input {
+  padding: 5px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr td.awf-seo-filter-terms-container table.awf-seo-filter-terms-table {
+  margin: 0;
+  width: 100%;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr td.awf-seo-filter-terms-container table.awf-seo-filter-terms-table input {
+  margin: 0 0 5px;
+  width: 100%;
+  min-width: 100px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr td.awf-seo-filter-terms-container table td {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-seo-range-settings-container td {
+  padding: 10px 10px 20px;
+  background: #f6f6f6;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-seo-range-settings-container td.awf-seo-range-settings-label {
+  padding-top: 13px;
+  text-align: right;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table td.awf-seo-filter-terms-container label .woocommerce-help-tip,
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-seo-range-settings-container td label .woocommerce-help-tip {
+  height: 11px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table td.awf-seo-filter-terms-container label,
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-seo-range-settings-container td label {
+  margin: 0 5px 0 10px;
+  vertical-align: text-bottom;
+  font-size: 10px;
+}
+
+#awf-settings table.widefat.awf-seo-modules-list-table td.awf-seo-filter-terms-container input:not(.awf-seo-filter-terms-inactive-setting),
+#awf-settings table.widefat.awf-seo-modules-list-table tr.awf-seo-range-settings-container td input {
+  margin: 0;
+  padding: 3px;
+  font-size: 12px;
+}
+
+/* Plugin Settings Tab */
+
+
+#awf-settings #awf_clear_product_counts_btn i {
+  margin-right: 5px;
+}
+
+#awf-settings .awf-theme-support-notice {
+  display: block;
+  background: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-left: 5px solid #eb2222;
+	border-radius: 3px;
+}
+
+#awf-settings .awf-advanced-plugin-header-container td {
+  padding: 0;
+}
+
+#awf-settings .awf-advanced-plugin-header-container h2 {
+  cursor: pointer;
+}
+
+#awf-settings .awf-advanced-plugin-header-container h2::after {
+  content: "\f077";
+  position: relative;
+  top: 0;
+  left: 10px;
+  font-family: 'AWF FA', 'Font Awesome 5 Free';
+  font-size: 16px;
+  font-weight: 900;
+}
+
+#awf-settings .awf-advanced-plugin-header-container.awf-advanced-plugin-collapsed h2::after {
+  content: "\f078";
+}
+
+#awf-settings .awf-pretty-query-var-names-container th {}
+
+#awf-settings .awf-pretty-query-var-names-container td {}
+
+#awf-settings .awf-pretty-query-var-names-container table td,
+#awf-settings .awf-tax-query-operators-container table td {
+  padding: 3px 0 3px 10px;
+}
+
+#awf-settings .awf-pretty-query-var-names-container table td:first-child,
+#awf-settings .awf-tax-query-operators-container table td:first-child {
+  text-align: right;
+  font-weight: 600;
+}
+
+#awf-settings .awf-pretty-query-var-names-container table td.awf-pretty-query-var-name-default {
+  color: #898989;
+  font-size: 13px;
+  font-style: italic;
+}
+
+#awf-settings .awf-pretty-query-var-names-container .awf-comment {
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 16px;
+  font-style: italic;
+}
+
+.awf-plugin-options-secondary-table {
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+}
+
+.awf-plugin-options-secondary-table td {
+  min-height: 24px;
+  padding: 5px;
+  vertical-align: middle;
+	background: #f7f7f7;
+  border: none;
+  border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #fafafa;
+}
+
+/* Multiselect adjustments */
+
+#awf-settings .select2-container--default .select2-search--inline .select2-search__field {
+  border: none;
+}
+
+#awf-settings .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  padding: 5px;
+}

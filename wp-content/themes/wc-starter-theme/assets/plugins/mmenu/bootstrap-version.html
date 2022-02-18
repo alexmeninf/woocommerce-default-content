@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="www.frebsite.nl" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>mmenu - Demo</title>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link type="text/css" rel="stylesheet" href="demo.css" />
+</head>
+
+<body>
+  <div id="page">
+
+    <nav class="mh-head navbar navbar-expand-lg justify-content-between flex-wrap" id="header-main">
+      <button class="navbar-toggler mburger mburger--spin" type="button" data-bs-toggle="collapse"
+        data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <b></b><b></b><b></b>
+      </button>
+
+      <!-- logo -->
+      <a href="#" class="mh-logo" style="background-image:url(logo.png)"></a>
+
+      <form class="mh-form d-none d-lg-flex w-100" style="max-width: 70%;">
+        <input placeholder="Buscar" />
+        <a href="#/" class="fa fa-search"></a>
+      </form>
+
+      <!-- card icon -->
+      <a class="fa fa-shopping-bag icon-cart" href="#shoppingbag"><span class="badge bg-secondary bg-danger rounded-pill">4</span></a>
+
+      <div class="collapse navbar-collapse head-navgation w-100 d-none d-lg-flex" id="menu">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Search field -->
+    <div class="header-bottom mh-head d-lg-none pt-0">
+      <form class="mh-form">
+        <input placeholder="Buscar" />
+        <a href="#/" class="fa fa-search"></a>
+      </form>
+    </div>
+
+    <!-- Menu cart -->
+    <nav id="shoppingbag">
+      <div>
+        <div class="p-4">
+          <p>You have no items in your shopping bag.</p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content" style="height: 300vh;">
+      <div class="container">
+        <p><strong>This is a demo.</strong><br />
+          It demonstrates the use of mmenu with a Bootstrap navbar.</p>
+        <p>Narrow down the page and click the menu icon to open the menu.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+  <script src="js/mmenu.js"></script>
+  <script src="js/mhead.js"></script>
+  <script src="js/playground.js"></script>
+  <script src="js/mmenu.polyfills.js"></script>
+
+  <script>
+    var headerTop = '#header-main',
+      navMenu = '#menu',
+      navCart = '#shoppingbag';
+
+    $(window).on('load resize', function () {
+      if ($(this).innerWidth() < 992) {
+        $(navMenu).removeClass('collapse navbar-collapse');
+      } else {
+        $(navMenu).addClass('collapse navbar-collapse');
+      }
+    });
+
+    document.addEventListener(
+      "DOMContentLoaded", () => {
+
+        // sidebar Menu
+        new Mmenu(document.querySelector(navMenu), {
+          wrappers: ["bootstrap"],
+          counters: true,
+          offCanvas: true,
+          searchfield: {
+            placeholder: 'Busque por categorias',
+            panel: true,
+            showSubPanels: false,
+            cancel: true,
+            noResults: 'Nenhum resultado encontrado.'
+          },
+          navbars: [
+            {
+              position: 'top',
+              content: ["searchfield"]
+            },
+            {
+              position: 'bottom',
+              content: [
+                "<a class='fa fa-envelope' href='#/'></a>",
+                "<a class='fa fa-twitter' href='#/'></a>",
+                "<a class='fa fa-facebook' href='#/'></a>"
+              ]
+            }
+          ],
+          extensions: [
+            "fx-menu-slide", // Slide effect
+            "pagedim-black", // Dim out the page to black
+            "shadow-panels", // Shadow left swipe
+            "theme-white"
+          ],
+          drag: { open: true, },
+          setSelected: { hover: true }
+        }, {
+          searchfield: { clear: true }
+        });
+
+        // fixed header
+        new Mhead(headerTop, { unpin: 200 });
+
+        // Cart menu
+        new Mmenu(document.querySelector(navCart), {
+          extensions: ["position-right", "fx-menu-slide", "pagedim-black",],
+          navbar: {
+            title: "Meu carrinho"
+          }
+        });
+      }
+    );
+  </script>
+</body>
+
+</html>

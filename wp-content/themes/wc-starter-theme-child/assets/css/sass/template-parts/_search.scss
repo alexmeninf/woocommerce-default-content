@@ -1,0 +1,21 @@
+.search {
+  .search-msg {
+    margin-top: 0.8rem;
+    font-size: 15px;
+  }
+
+  .title-search {
+    margin-bottom: 1rem;
+    font-size: 20px;
+  }
+}
+
+.search-form {
+  input {
+    padding-right: 42px !important;
+  }
+}
+
+.dgwt-wcas-no-submit .dgwt-wcas-ico-magnifier path {
+  fill: var(--color-input-txt);
+}

@@ -1,0 +1,23 @@
+[class*="headline-"] {
+  display: block;
+  letter-spacing: -0.03em;
+  width: 100%;
+}
+
+.title-section {
+  border-bottom: 2px dashed var(--color-border-color);
+  padding-bottom: 20px;
+  
+  @include media(lg) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.gradient-insta {
+  background: #d13345;
+  background: -webkit-linear-gradient(15deg, #fff700, #d13345, #c42e9a, #9c49c3, #4962e2);
+  background: -moz-linear-gradient(15deg, #d13345, #c42e9a, #9c49c3, #4962e2);
+  background: linear-gradient(15deg, #fff700, #d13345, #c42e9a, #9c49c3, #4962e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

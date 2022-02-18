@@ -1,0 +1,16 @@
+.sidebar-tags {
+  a {
+    border: 1px solid var(--color-border-color);
+    border-radius: $border-radius-sm;
+    color: var(--color-text);
+    display: inline-block;
+    font-size: 13px;
+    margin: 0 7px 7px 0;
+    padding: 8px 7px;
+
+    &:hover {
+      background-color: var(--color-fill-fourth);
+      border-color: var(--color-fill-fourth);
+    }
+  }
+}

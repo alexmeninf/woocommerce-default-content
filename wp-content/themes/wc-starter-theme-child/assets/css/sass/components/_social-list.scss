@@ -1,0 +1,97 @@
+.social-list {
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+
+  a {
+    align-items: center;
+    border-radius: 100%;
+    border: 1px solid #3b3535;
+    color: #ddcbcc;
+    display: flex;
+    height: 2.8em;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    width: 2.8em;
+    font-size: 1rem;
+    @extend %transition;
+
+    &:hover {
+      background: #856465;
+      color: $white;
+      transform: translateY(-5px);
+      border-color: #856465;
+    }
+  }
+
+  &.small {
+    a {
+      font-size: 0.7rem;
+    }
+  }
+
+  // Adicionar os icones no :before quando não tem a tag <i>
+  &.before-icons {
+    a {
+      &::before {
+        content: "\f135";
+        display: inline-block;
+        font-family: "Font Awesome 5 Brands";
+        font-size: 1.1em;
+        line-height: 1;
+        vertical-align: middle;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &[href*="whatsapp.com"]::before {
+        content: "\f232";
+      }
+
+      &[href*="youtube.com"]::before {
+        content: "\f167";
+      }
+
+      &[href*="facebook.com"]::before {
+        content: "\f39e";
+      }
+
+      &[href*="github.com"]::before {
+        content: "\f09b";
+      }
+
+      &[href*="google.com"]::before {
+        content: "\f1a0";
+      }
+
+      &[href*="instagram.com"]::before {
+        content: "\f16d";
+      }
+
+      &[href*="linkedin.com"]::before {
+        content: "\f0e1";
+      }
+
+      &[href*="pinterest.com"]::before {
+        content: "\f231";
+      }
+
+      &[href*="telegram.com"]::before {
+        content: "\f3fe";
+      }
+
+      &[href*="tiktok.com"]::before {
+        content: "\e07b";
+      }
+
+      &[href*="twitter.com"]::before {
+        content: "\f099";
+      }    
+    }
+  }
+}

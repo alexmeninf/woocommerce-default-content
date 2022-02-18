@@ -1,0 +1,20 @@
+<wpml-config>
+  <admin-texts>
+    <key name="awf_preset_*_description"/>
+    <key name="awf_preset_*_filter_btn_label"/>
+    <key name="awf_preset_*_reset_btn_label"/>
+    <key name="awf_filter_*_settings">
+      <key name="title"/>
+      <key name="active_prefix"/>
+      <key name="placeholder"/>
+      <key name="style_options">
+        <key name="value_prefix"/>
+        <key name="value_postfix"/>
+        <key name="term_labels"/>
+      </key>
+      <key name="type_options">
+        <key name="range_labels"/>
+      </key>
+    </key>
+  </admin-texts>
+</wpml-config>

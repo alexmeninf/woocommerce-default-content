@@ -1,0 +1,35 @@
+# Blacklist files/folders
+/*
+wp-admin/**/.htaccess
+wp-includes/**/.htaccess
+wp-content/**/.htaccess
+wp-content/wflogs/*
+wp-content/cache/*
+wp-content/mu-plugins/*
+wp-content/uploads/wpsynchro/
+wp-content/autoptimize_404_handler.php
+
+# White list Wordpress Folders
+!wp-admin/
+!wp-content/
+!wp-includes/
+
+# Whitelist to wordpress files
+!.gitignore
+!xmlrpc.php
+!wp-trackback.php
+!wp-signup.php
+!wp-settings.php
+!wp-mail.php
+!wp-login.php
+!wp-load.php
+!wp-links-opml.php
+!wp-cron.php
+!wp-config-sample.php
+!wp-comments-post.php
+!wp-blog-header.php
+!wp-activate.php
+!readme.html
+!license.txt
+!index.php
+!README.md

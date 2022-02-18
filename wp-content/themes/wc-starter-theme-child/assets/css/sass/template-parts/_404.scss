@@ -1,0 +1,13 @@
+.page-404 {
+  position: relative;
+  z-index: 1;
+
+  .title-404 {
+    font-size: calc(9em + 2.5vw);
+    line-height: 1;
+    font-weight: 900;
+    -webkit-text-stroke: 1px var(--color-theme);
+    color: transparent;
+  }
+} 
+ 

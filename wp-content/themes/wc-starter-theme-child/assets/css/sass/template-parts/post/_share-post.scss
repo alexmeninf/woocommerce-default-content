@@ -1,0 +1,61 @@
+.share-post {
+	justify-content: space-between;
+	margin-top: 15px;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+
+			>a,
+			>button {
+				border-radius: 50%;
+				border: none;
+				display: block;
+				cursor: pointer;
+				font-size: 1.2em;
+				height: 2em;
+				line-height: 2em;
+				text-align: center;
+				width: 2em;
+				@extend %transition;
+
+				&:hover {
+					transform: translateY(-7px);
+					@extend %transition;
+				}
+			}
+		}
+	}
+}
+
+.share-default {
+	@include button($color-default, $white, darken($color-default, 10%), $white);
+}
+
+.share-facebook {
+	@include button(#036be4, $white, darken(#036be4, 10%), $white);
+}
+
+.share-twitter {
+	@include button(#55acee, $white, darken(#55acee, 10%), $white);
+}
+
+.share-linkedin {
+	@include button(#007bb5, $white, darken(#007bb5, 10%), $white);
+}
+
+.share-whatsapp {
+	@include button(#25D366, $white, darken(#25D366, 10%), $white);
+}
+
+.share-telegram {
+	@include button(#0088cc, $white, darken(#0088cc, 10%), $white);
+}

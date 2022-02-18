@@ -1,0 +1,170 @@
+// Spacing
+$input-space-y: 0.85em;
+$input-space-x: 0.75em;
+
+/*
+ * Reset fields
+ */
+input:not([type="radio"]):not([type="checkbox"]),
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+// input:not([type="radio"]):not([type="checkbox"]),
+// select,
+// optgroup,
+// textarea {
+//   border-radius: 0.4em;
+//   border: 1px solid var(--color-input-border-color);
+//   display: block;
+//   font-size: 0.95rem;
+//   margin-bottom: 0.6em;
+//   padding: 0.5em 0.75em;
+//   width: 100%;
+//   @extend %transition;
+// }
+
+select {
+  border: 1px solid var(--color-input-border-color);
+}
+
+textarea {
+  max-height: 250px;
+  min-height: 63px;
+}
+
+%input {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  color: var(--color-input-txt);
+  margin-bottom: 0;
+}
+
+
+/**
+ * Arquivo aplicado para as inputs do Woocommerce
+ */
+p.form-row:not(.single-country),
+.wppb-form-field:not(.wppb-radio):not(.wppb-send-credentials-checkbox) {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+
+  input:not([type="radio"]):not([type="checkbox"]),
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]),
+  textarea,
+  select {
+    background: none;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-color);
+    color: var(--color-text);
+    font-size: 1rem;
+    padding: 22px 13px 9px;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-theme);
+    }
+
+    // Autofill
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0px 1000px var(--color-fill) inset !important;
+      -webkit-text-fill-color: var(--color-text) !important;
+    }
+
+    // Placeholder
+    @include input-placeholder {
+      color: var(--color-text-secondary-color);
+    }
+  }
+
+  textarea {
+    max-height: 250px;
+    min-height: 122px;
+  }
+
+  label:not(.woocommerce-form__label) {
+    color: var(--color-text-secondary-color);
+    cursor: auto;
+    font-size: 1em;
+    font-weight: 500;
+    left: $input-space-x;
+    padding-left: 5px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+    user-select: none;
+    top: 18px;
+    // background: var(--color-fill);
+    z-index: 1;
+    transform: translateY(-11px) scale(0.7);
+    line-height: 1;
+
+    // Limit content
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+  }
+
+  .bar {
+    background: var(--color-theme);
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+    transition: all 0.4s ease;
+    width: 100%;
+  }
+}
+
+// WC Selects filters
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 60px;
+}
+
+.select2-container--default {
+  .select2-selection--single {
+    border-color: var(--color-border-color);
+  }
+
+  .select2-selection__rendered {
+    line-height: 60px !important;
+    font-size: 1rem;
+  }
+}
+
+.select2-container--open .select2-dropdown--below,
+.select2-container--open .select2-dropdown--above {
+  box-shadow: 6px 0px 200vh 12000vh #0000002a;
+}
+
+.select2-container--default .select2-selection--single {
+  border: none !important;
+}
+
+.select2-dropdown,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  background-color: var(--color-fill);
+  border: 1px solid var(--color-border-color);
+  color: var(--color-text);
+}

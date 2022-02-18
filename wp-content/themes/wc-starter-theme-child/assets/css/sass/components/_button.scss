@@ -1,0 +1,31 @@
+.btn-theme {
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-size: calc(1.05rem + 0.35vw);
+  font-weight: 700;
+  text-decoration: unset;
+  user-select: none;
+  padding: 0.5em 1.1em;
+  margin: 0.25rem 0;
+  text-align: center;
+  vertical-align: middle;
+
+  > i {
+    font-size: 110%;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  @include button(var(--color-button-background), var(--color-button-text), var(--color-button-background-hover), var(--color-button-text));
+}
+
+.btn-small {
+  font-size: 17px;
+}
+
+.btn-theme-inverse {
+  border: 1px solid;
+  @include button(transparent, var(--color-button-background), var(--color-button-background), var(--color-button-text));
+}

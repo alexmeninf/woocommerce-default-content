@@ -1,0 +1,85 @@
+.my-account {
+	.woocommerce {
+		@include make-row();
+
+    > * {
+      @include make-col-ready();
+    }
+	}
+}
+
+
+// My account navigation
+.woocommerce-MyAccount-navigation {
+	//link navigation
+	a {
+		padding: 1rem;
+	}
+}
+
+// My Address page
+.myaccount-content {
+	background: var(--color-fill-secondary);
+	border-radius: 5px;
+	padding: 3rem 2rem;
+}
+
+.woocommerce-Addresses {
+	.content {
+		border-radius: 5px;
+		background: var(--color-fill-secondary);
+		border-top: 3px solid var(--color-theme);
+		padding: 3rem 2rem;
+		color: var(--color-text);
+
+		h3,
+		address {
+			color: var(--color-text);
+		}
+
+		// link
+		a {
+			background-color: var(--color-theme);
+			color: $white !important;
+			padding: 0.3em 1.9em;
+			text-decoration: none;
+
+			&:hover {
+				background-color: lighten($color-default, 10%);
+			}
+		}
+	}
+}
+
+// title on pages
+.login-register {
+	.title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+		font-weight: 600;
+    color: var(--color-text);
+	}
+}
+
+/*orders*/
+tr.woocommerce-orders-table__row {
+	@media (max-width: map-get($grid-breakpoints, md)-1) {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-border-color);
+		margin-top: 1rem;
+		border-radius: 13px;
+		padding: 10px;
+
+		td {
+			text-align: left !important;
+
+			&.woocommerce-orders-table__cell-order-actions {
+				a {
+					margin-bottom: 3px;
+				}
+			}
+		}
+	}
+}

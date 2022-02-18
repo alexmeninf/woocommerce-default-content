@@ -1,0 +1,13 @@
+.img-illustration {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  max-width: 100%;
+  margin: 0 auto;
+  max-height: 170px;
+  margin-bottom: 40px;
+
+  @include media(md) {
+    max-height: 270px;
+  }
+}

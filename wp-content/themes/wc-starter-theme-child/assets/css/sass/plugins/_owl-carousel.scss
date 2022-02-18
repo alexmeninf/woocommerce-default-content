@@ -1,0 +1,91 @@
+.owl-carousel {
+  .owl-stage {
+    margin: 0 auto;
+  }
+
+  .owl-stage-outer {
+    padding: 0 !important;
+  }
+
+  &:hover {
+    @include media(xl) {
+      .owl-nav {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.owl-nav {
+  position: initial !important;
+  margin-top: 1rem !important;
+  padding: 0 !important;
+  transition: 0.2s ease-in;
+
+  @include media(xl) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  [class*="owl-"] {
+    background-color: var(--color-border-color);
+    color: var(--color-text) !important;
+    height: 40px;
+    width: 40px;
+
+    @include media(md) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.owl-prev {
+  @include media(md, max) {
+    margin-right: 6px;
+  }
+}
+
+@include media(md) {
+  button.owl-prev {
+    left: -8px;
+  }
+
+  button.owl-next {
+    right: -8px;
+  }
+}
+
+.products {
+  list-style: none;
+
+  .owl-stage {
+    display: flex;
+    align-items: stretch;
+
+    li.product {
+      height: 100%;
+    }
+  }
+}
+
+.theme-products {
+  a {
+    color: var(--color-text);
+  }
+}
+
+// Categorie section
+.align-categories {
+  .owl-item {
+    text-align: center;
+  }
+}
+
+.destaques-section {
+  .owl-stage {
+    margin: 0;
+  }
+}

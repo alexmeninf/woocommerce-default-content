@@ -1,0 +1,90 @@
+// Variáveis
+$color-default: #0066cc !default;
+
+// spacing between sections
+$default-spacing-y: 6em !default;
+$default-spacing-x: 0 !default; 
+
+/* ---- EXTENDS ---- */
+%transition {
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+
+/* ---- MIXINS ---- */
+@mixin media($width, $type: min, $dimension: width) {
+  @if map_has_key($grid-breakpoints, $width) {
+    $width: map_get($grid-breakpoints, $width);
+  }
+
+  @if $type == max {
+    $width: $width - 1px;
+  }
+
+  @media only screen and (#{$type}-#{$dimension}: $width) {
+    @content;
+  }
+}
+
+// components/_button.scss
+@mixin button($bg, $color, $bgHover, $colorHover) {
+  background-color: $bg;
+  color: $color;
+  border-color: $bgHover;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $bgHover;
+    border-color: $bgHover;
+    color: $colorHover;
+  }
+}
+
+@mixin pseudo($zIndex: 0, $content: true) {
+  @if $content { content: ""; }
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: $zIndex;
+}
+
+@mixin pseudoTitle($title) {
+  &:before {
+    color: $black;
+    content: '#{$title}:';
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
+
+// Change placeholder style
+// components/_input.scss
+@mixin input-placeholder {
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// 
+//
+// Woocommerce 
+//
+// 
+
+/*----------  Box shadow  ----------*/
+%box-shadow-default {
+	box-shadow: 3px 4px 15px -6px #80808059, -3px -4px 20px #80808014;  
+}
+
+// Single product buttons
+// Para telas < 375px: usar 142px
+$width-summary-qnt: 192px;
+$width-summary-add-cart: $width-summary-qnt;

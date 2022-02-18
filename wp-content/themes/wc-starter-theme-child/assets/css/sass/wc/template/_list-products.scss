@@ -1,0 +1,17 @@
+
+// list last section on front page
+ul.product-list li .info-product .price {
+	.woocommerce-Price-amount,
+	ins .amount {
+		font-size: 18px;
+		color: var(--color-text);
+		font-weight: 500;
+		margin-right: 8px;
+	}
+
+	del .amount {
+		color: var(--color-text-secondary-color);
+		font-weight: 400;
+		font-size: 13px;
+	}
+}

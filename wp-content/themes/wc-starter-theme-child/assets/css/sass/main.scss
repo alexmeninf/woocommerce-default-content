@@ -1,0 +1,22 @@
+@import "../../../../wc-starter-theme/assets/plugins/bootstrap/sass/functions";
+@import "../../../../wc-starter-theme/assets/plugins/bootstrap/sass/mixins";
+@import "../../../../wc-starter-theme/assets/plugins/bootstrap/sass/variables";
+@import "variables";
+@import "root";
+
+@import "reboot";
+@import 'template';
+@import "global";
+
+@import "wc/template/woocommerce";
+@import "wc/filter-purchase-step";
+@import "wc/plugin-search";
+@import "wc/plugin-wishlist";
+@import "wc/illustrations";
+@import "wc/plugin-profile-builder-pro";
+@import "wc/plugin-others";
+
+@import "plugins";
+@import "utilities";
+@import "components";
+@import "template_parts";

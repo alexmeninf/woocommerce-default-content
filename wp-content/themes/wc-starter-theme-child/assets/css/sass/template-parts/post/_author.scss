@@ -1,0 +1,17 @@
+.author-post {
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid var(--color-border-color);
+  padding: ($default-spacing-y / 4) 0;
+
+  .avatar {
+    border-radius: 100%;
+    margin-right: 25px;
+    border: 2px dotted var(--color-border-color);
+    padding: 5px;
+  }
+
+  .author-title {
+    margin-bottom: 0;
+  }
+}

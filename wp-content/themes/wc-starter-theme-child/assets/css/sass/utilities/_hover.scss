@@ -1,0 +1,70 @@
+//
+// Hover background effect
+//
+
+.hover-overlay {
+  .mask {
+    opacity: 0;
+    @extend %transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+//
+// Combine essa classe como filha de .hover-overlay
+//
+
+.mask {
+  overflow: hidden;
+  background-attachment: fixed;
+  @include pseudo;
+}
+
+//
+// Zoom image Effect
+//
+
+.hover-zoom {
+  overflow: hidden;
+
+  img {
+    @extend %transition;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.6) !important;
+    }
+  }
+}
+
+//
+// Hover shadow
+//
+
+.hover-shadow {
+  @extend %transition;
+
+  &:hover {
+    box-shadow: $box-shadow-lg !important;
+  }
+}
+
+/*
+ Outras class hover foram adicionadas em bootstrap/_utilities.scss
+ Obs: foi adicionado o valor customizado 'hover' na lista e modificado o mixin generate-utility
+
+ .translate-hover-#{prefix}
+ .scale-hover-#{prefix}
+*/
+//
+// Adicionar transition
+// 
+[class*="translate-hover-"],
+[class*="scale-hover-"] {
+  display: inline-block;
+  transition: cubic-bezier(0.61, 0.32, 0.29, 1.37) .4s;
+}
